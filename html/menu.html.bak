@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Gpre'C'</title>
+		<meta name = "viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,"/>
+		<link rel = "stylesheet" type = "text/css" href = "../css/main.css"/>
+	</head>
+	<body>
+		<div>
+			<a href = "../html/theory.html"><img id = "btnM" src = "../images/btnT.png" /></a>
+			<a href = "../html/theory.html"><img id = "btnM" src = "../images/btnL.png" /></a>
+			<a href = "../html/trk.html"><img id = "btnM" src = "../images/btnTk.png" /></a>
+			<a href = "../html/pat.html"><img id = "btnM" src = "../images/btnP.png" /></a>
+			<a href = "../html/mis.html"><img id = "btnM" src = "../images/btnM.png" /></a>
+			<a href = "../html/info.html"><img id = "btnM" src = "../images/btnI.png" /></a>
+		</div>
+	</body>
+</html>

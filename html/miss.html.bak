@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Gpre'C'</title>
+		<meta name = "viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,"/>
+		<link rel = "stylesheet" type = "text/css" href = "../css/main.css"/>
+	</head>
+	<body bgcolor = "black" align = "left">
+		<div style = "background-color : black; color : white; font-family : Maiandra GD;font-size : 150%;">
+			<p>
+				(1) Write a program to round off an integer i to the next largest
+multiple of another integer j . For example, 256 days when
+rounded off to the next largest multiple divisible by a week
+results into 259.<br><br>
+#include&lt;stdio.h&gt;<br>
+int main()<br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int i, j, k;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;printf("\nEnter values of i and j");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;scanf("%d%d",&amp;i,&amp;j);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;k = i+j-(i%j);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;printf("\nNext largest multiple = %d",k);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>
+}<br><br><br>
+	(2) Temperature of a city in farenheit degrees is entered through
+the keyboard. Write a program to convert and print the
+temperature in centigrade degrees.<br><br>
+#include&lt;stdio.h&gt;<br>
+int main()<br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;float f,c;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;printf("Enter temperature in farenheit degrees");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;scanf("%f",&amp;f);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;c = 5/9.0*(f-32);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;printf("Temp, in centigrade degrees = %f",c);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>
+}<br><br><br>
+	(3) Write a program to find out how many days and how many
+weeks have passed between the dates 01/01/92 to 31/05/92.
+Also find out how many days could not get evened out into
+weeks.<br><br>
+#include&lt;stdio.h&gt;<br>
+int main()<br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int days, weeks, leftoverdays;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;days = 31 +29 + 31 +30 + 31;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;weeks = days/7;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;leftoverdays = days%7;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;printf("days = %d",days);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;printf("weeks = %d",weeks);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;printf("left over days = %d",leftoverdays);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>
+}<br><br><br>
+	(4) A number is entered through the keyboard. The number may
+contain 1,2,3,4, or 5 digits. Write a program to find the number
+of digits in the number.<br><br>
+#include&lt;stdio.h&gt;<br>
+int main()<br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;printf("\nEnter a number");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;scanf("%d",&amp;n);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;n = n/10 ;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if( n != 0 )<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;count = count + 1 ;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;n = n/10 ;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if( n != 0 )<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;count = count + 1 ;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;n = n/10 ;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if (n != 0 )<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;count = count + 1 ;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;n = n/10 ;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if( n != 0 )<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;count = count + 1 ;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;printf("\nNo. of digits = %d",count);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>
+}<br><br><br>
+	(5) The equation x<sup>2</sup>+ y<sup>2</sup> = r represents a circle with centre at origin and radius r. Write a program that reads r from the keyboard and prints the number of points with integer coordinates
+that lie within the circle.<br><br>
+#include&lt;stdio.h&gt;<br>
+int main()<br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;float r;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int x, y, points = 0, i;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;printf ("\nEnter the radius of the circle");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;scanf( "%f",&amp;r );<br>
+&nbsp;&nbsp;&nbsp;&nbsp;for(x = 0; x &lt;= r; x++)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(y = 1; y &lt;= r; y + + )<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if((x*x + y*y) &lt;= (r*r))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;points++;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;points = points*4 + 1 ;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;printf("No. of points inside the circle = %d", points);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>
+}<br><br><br>
+	(6) Write a program which finds four digit perfect squares where
+the number represented by the first two digits and the number
+represented by the last two digits are also perfect squares.<br><br>
+#include&lt;stdio.h&gt;<br>
+#include&lt;math.h&gt;<br>
+int main()<br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int i, a, num, d1, d2, d3, d4, nleft, nright, x, y;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;for(i=1000; i&lt;=9999; i++)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a = sqrt(i);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if( i == a*a )<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;num = i;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d4 = num%10;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;num = num/10;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d3 = num%10;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;num = num/10;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d2 = num%10;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;num = num/10;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d1 = num%10;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nleft = d1*10 + d2;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nright = d3*10 + d4;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x = sqrt(nleft);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y = sqrt(nright);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(nleft == x*x &amp;&amp; nright == y*y)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf ("Desired number = %d\n",i);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>
+}<br><br><br>			
+	(7) If a number 972 is entered through the keyboard, your program
+should print "Nine Seven Two". Write the program such that
+it does this for any positive integer.<br><br>
+#include&lt;stdio.h&gt;<br>
+int main()<br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;unsigned int num, num2, no_dig = 0, p;<br>
+int i;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;printf ("\nEnter any positive integer");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;scanf("%d",&amp;num);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;num2 = num;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;do
+&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;no_dig++;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;num2 = num2/10;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br> while (num2 != 0 );<br>       
+&nbsp;&nbsp;&nbsp;&nbsp;for( ; no_dig &gt; 0; no_dig, num %= p)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p = 1 ;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;for(i = no_dig - 1; i &gt; 0; i--)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P = P * 10 ;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;switch(num/p)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case 0 :<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("ZERO");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case 1 :<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("ONE");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case 2 :<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("TWO");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case 3 :<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("THREE");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case 4:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("FOUR");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case 5:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("FIVE");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case 6:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("SIX");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case 7:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("SEVEN");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case 8:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("EIGHT");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case 9 :<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("NINE");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>
+}<br>
+
+			</p>
+			<p>
+				(8) Two dates are entered through the keyboard in dd,mm,yy
+format. Write a program to find out the difference in these two
+dates in terms of number of days.<br><br>
+#include&lt;stdio.h&gt;<br>
+int main()<br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int d1, m1, y1, d2, m2, y2, days, dm;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;days = 1 ;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;dm = 0 ;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;printf("Input first date (dd,mm,yy)");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;scanf("%d %d %d", &amp;d1, &amp;m1, &amp;y1);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;printf("Input second date (dd,mm,yy)");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;scanf("%d %d %d", &amp;d2, &amp;m2, &amp;y2);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;dm = daysinmonth(m1,y1);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;while(1)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;days = days + 1;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d1 = d1 + 1 ;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(d1 &gt; dm)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m1 = m1+1;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d1 = 1;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(m1 &gt; 12)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m1 = 1;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y1= y1 + i;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dm = daysinmonth(ml,y1);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(d1 == d2 &amp;&amp; m1 == m2 &amp;&amp; y1 == y2)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;printf("\n\nDifference in Dates = %d", days);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>
+}<br>
+daysinmonth(m,y)<br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int m,y;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int dm;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if(m == 11 || m == 31|| m == 51 || m == 71 || m == 81|| m == 101 || m == 12)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dm = 31;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if(m == 41 || m === 61 || m === 91 || m == 11)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dm =30;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if(m == 2)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dm = 28;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(( y%400 == 0) || (y%100 f= 0 &amp;&amp; y%4 == 0))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dm = 29;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return (dm);<br>
+}<br><br><br>
+	(9) Consider a currency system in which there are notes of seven
+denominations, namely,
+Re. 1, Rs. 2, Rs. 5, Rs. 10, Rs. 50, Rs. 100
+If a sum of Rs. N is entered through the keyboard, write a
+program to compute the smallest number of notes that will
+combine to give Rs. N.	<br><br>
+#include&lt;stdio.h&gt;<br>
+void main()<br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int sum, notes = 0 ;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;printf("\nEnter the sum of rupees");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;scanf("%d", &amp;sum);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;denom(&amp;sum, &amp;notes, 100);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;denom(&amp;sum, &amp;notes, 50);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;denom(&amp;sum, &amp;notes, 10);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;denom(&amp;sum, &amp;notes, 5);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;denom(&amp;sum, &amp;notes, 2);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;notes += sum;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;printf("\nSmallest number of notes = %d", notes);<br>
+}<br>
+denom(s,n,c)<br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int *s,*n,c;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*n += ((*s)/c);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*s %= c;<br>
+}<br><br><br>
+	(10) What is the output of the following<br>
+#define ISLP(y) ((y%400 == 0) || (y%100 != 0 &amp;&amp;	y%4 == 0 ))<br>
+int main()<br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int y = 1992;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if (ISLP(y))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Leap year");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;else<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf ("Not a Leap year");<br>	
+}<br><br>
+<strong>Output</strong> : <br><br>
+
+Leap year <br><br>
+
+<strong>Explanation</strong> : <br><br>
+
+The macro ISLP(y)<br> takes as its argument any year y, and tests if the year is a leap year or not. For a year to be leap, either it should be an integral multiple of 400, or if the year is not divisible by 100, an integral multiple of 4. Why is this so and why we are not told this in school, I leave for you to figure out. The year 1992 is not divisible by 400, hence the first condition fails, but the second part of the condition holds good. Hence the output that the year is indeed a leap year is obtained.<br><br><br>
+	(11)  What is the output of the following<br>
+#define MYFILE "conio.h"<br>
+#include MYFILE<br>
+int main()<br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;window ( 1 0 , 1 0 , 4 0 , 2 0 );<br>
+&nbsp;&nbsp;&nbsp;&nbsp;cprintf ("A pinch of probably is much better than...");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;cprintf ("A pound of perhaps!");<br>
+}<br><br>
+<strong>Output</strong> : <br><br>
+
+A pinch of probably is much better than<br>
+...A pound of perhaps!<br><br>
+
+<strong>Explanation</strong> : <br><br>
+
+The name of a file can be used as an expansion for a macro definition. Saying #include MYFILE is same as saying include "conio.h", as this is what the preprocessor sends for compilation after replacing the macro MYFILE. The file "conio.h" is a header file which is required by the function window(). This function defines an active text mode window. Here, the area on the console from the 10t h column, 10th row to the 40th column, 20th row is made active. The function cprintf() sees to it that the output of our program goes only to this particular area on the screen. ( printf(), on the other hand simply sends the formatted output to the portion of the screen where the cursor is currently located.) We can
+appreciate the point better when we take note of the fact that we have our output in two different lines, without having inserted a newline '\n'. As the message gets printed, when the cursor comes to the right edge of the window, it automatically
+goes to the left edge on the next line and prints the remaining message there.
+<br><br><br>
+	(12) The first difference D1 of a sequence A of N elements is obtained by subtracting each element, except the last, from the next element in the array. The second difference D2 is defined as the first difference of D1, and so on. For example, if<br>
+A: 1,2,4,7,11,16, 22, then<br>
+D1: 1, 2, 3, 4, 5, 6<br>
+D2:1,1,1,1,1<br>
+D3: 0, 0, 0, 0<br>
+Write a program that reads a sequence of 25 elements in an
+array and finds its first, second, and third differences.<br>
+#include&lt;stdio.h&gt;<br>
+int main()<br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int a[25], d1[24], d2[23], d3[22], i;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;printf("Enter 25 elements\n");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;for( i = 0; i &lt;= 24; i++)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;scanf("%d", &amp;a[i]);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;printf("\nA:");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;for(i = 0; i &lt;= 24; i++)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("%d", a[i]);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;printf("\n\n1st, 2nd and 3rd differences are:\n");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;printf("\nD1:");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;for(i = 0; i &lt;= 23; i++)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d1[i] = a[i+1]-a[0];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("%d",d1[0]);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;printf("\nD2:");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;for(i = 0; i &lt;= 22; i++)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d2[i] = d1[i+1]-d1[i];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("%d ",d2[i]);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;printf("\nD3:");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;for(i = 0; i &lt;= 21; i++)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d3[i] = d2[i+1]-d2[i];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("%d",d3[i])<br> ;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>
+}<br><br><br>
+	(13) A common problem in statistics is that of generating frequency distribution of the given data. Assuming that the data consists of 50 positive integers in the range 1 to 25, write a program that prints the number of times each integer occurs in the data.<br><br>
+int main()<br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int data[50], i;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;static int freq[26];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;printf("Enter data\n");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;for( i = 0; i &lt; 50; i++)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scanf("%d",&amp;data[i]);<br> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(data[i] = 1 &amp;&amp; data[i] &lt;= 25)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;freq[data[i]] = freq[data[i]+ 1];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;printf("\nFrequency of occurrence:\n");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;for(i = 1; i &lt; 26; i++)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(freq[i]!=0)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("%d - %d\n", i,freq[i]);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return 0;
+}<br><br><br>
+	(14) Write a function xstrstr() that will return the position where one string is present within another string. If the second string doesn't occur in the first string xstrstr() should return a 0. For example, in the string "somewhere over the rainbow", "over" is present at position 11.<br><br>
+int main()<br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;static char strl[] = "somewhere over the rainbow";<br>
+&nbsp;&nbsp;&nbsp;&nbsp;static char str2[] = "over";<br>
+&nbsp;&nbsp;&nbsp;&nbsp;printf("String found at %d", xstrstr(strl,str2));<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>
+}<br>
+xstrstr (s1,s2)<br>
+char *s1,*s2;<br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int i, a, len1, len2;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;len1 = strlen(s1)<br> ;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;len2 = strlen(s2)<br> ;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;for (i = 0; i &lt;= (len1-1); i++)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a = strcmp((s1+i),s2,len2);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(a == 0)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return(i+1);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return (0);<br>
+}<br><br><br>
+	(15) Write a program to compress the following string such that the the multiple blanks are eliminated. Store the compressed message in another string. Also write a decompressant program to get back the original string with all its spaces restored.<br>        
+"Imperial&nbsp;&nbsp;&nbsp;&nbsp; Palace.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Rome.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Attention Julius&nbsp;&nbsp;&nbsp;&nbsp; Caesar.<br>
+Dear Caesar,&nbsp;&nbsp;&nbsp;&nbsp; we&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; have the&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; clarification you requested.<br>&nbsp;&nbsp;  Details&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; to&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; follow&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; by courier.<br> Meanwhile&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; stay&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; clear&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  of&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Brutus."<br><br>
+#include&lt;stdio.h&gt;<br>
+int main()<br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;static unsigned char strl [] = "Imperial Palace. Rome. Attention Julius Caesar. Dear Caesar, we have the clarification you requested. Details to follow by courier. Meanwhile stay
+clear of Brutus.";<br>
+&nbsp;&nbsp;&nbsp;&nbsp;unsigned char str2[500], str3[500];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;printf("%s\n",strl);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;compress(str1,str2);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;printf("%s\n",str2);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;decompress(str2,str3);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;printf("%s",str3);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>
+}<br>
+compress(s,t)<br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;unsigned char *s, *t ;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int spcount;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;while(*s)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(*s == "")<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;spcount = 1;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s++;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while(*s == "")<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;spcount++;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s++;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(spcount == 10)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*t = 23;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t++;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;spcount = 0;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(spcount)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (spcount == 1)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*t = *s + 127;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s++;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*t = 13 + spcount;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t++;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*t = *s;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t++;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s++;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*t = 0;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;decompress(s, t)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;unsigned char *s, *t;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int i;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;while(*s)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(*s >= 127)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*t = "";<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t++;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*t = *s - 127;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t++;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (*s &gt; 13 &amp;&amp; *s &lt; 24)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(i = 0; i &lt; (*s - 13); i++)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*t = "" ;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t++;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*t = *s ;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t++;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s++;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*t = 0;<br>
+}<br><br>
+	</body>
+</html>

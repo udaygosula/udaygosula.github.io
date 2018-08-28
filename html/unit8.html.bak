@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Gpre'C'</title>
+		<meta name = "viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,"/>
+		<link rel = "stylesheet" type = "text/css" href = "../css/main.css"/>
+		<style>
+			html{
+				height : 100%;
+			}body{
+				height : 90%;
+			}
+		</style>
+	</head>
+  <body>
+	<p style = "text-align : center; color : brown; font-family : Cooper; font-size : 250%;"> UNIT - V</p>
+	<p style = "text-align : center; color : brown; font-family : Cooper; font-size : 150%; padding-top : -10%">Files</p>
+	<ul>
+		<li>It is a collection of data that is stored on secondary storage devices like disk.</li>
+	</ul>
+	<ul>
+		<li>There are four basic file operations.
+			<ol type = "i">
+				<li>Opening/Creating a file</li>
+				<li>Closing a file</li>
+				<li>Reading a file</li>
+				<li>Writing in a file</li>
+			</ol>
+		</li>
+	</ul>
+	<table>
+		<tr>
+			<th><strong>File operation</strong></th>
+			<th><strong>Declaration & Description</strong></th>
+		</tr>
+		<tr>
+			<td>fopen()<br>
+			To open a file</td>
+			<td><strong>syntax</strong> :<br>
+&nbsp;&nbsp;&nbsp;&nbsp;FILE *fopen(const char *filename, const char *mode)<br>
+			<strong>description</strong> : <br>
+&nbsp;&nbsp;&nbsp;&nbsp;fopen() function is used to open a file to perform operations such as reading, writing etc.We declare a file pointer and use fopen() as below. fopen() function creates a new file if the mentioned file name does not exist.<br>
+			<strong>Example</strong> : <br>
+&nbsp;&nbsp;&nbsp;&nbsp;FILE *fp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;fp=fopen(“filename”, ”‘mode”);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<i>fp</i> : file pointer of the data_type “FILE”.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<i>filename</i> : the actual file name with full path of the file.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<i>mode</i> : refers to the operation that will be performed on the file.
+<br> 
+			<strong>Example</strong> : <i>r</i>, <i>w</i>, <i>a</i>, <i>r+</i>, <i>w+</i> and <i>a+</i>.
+			</td>
+		</tr>
+		<tr>
+			<td>fclose()<br>
+			To close a file</td>
+			<td>
+				<strong>syntax</strong> : <br>
+&nbsp;&nbsp;&nbsp;&nbsp;int fclose(FILE *fp);<br>
+				fclose() function closes the file that is being pointed by file pointer fp.<br>
+			<strong>Example</strong> : <br>
+&nbsp;&nbsp;&nbsp;&nbsp;fclose(fp);</td>
+		</tr>
+		<tr>
+			<td>fgets()<br>
+			To read a file</td>
+		<td><strong>syntax</strong> : <br>
+&nbsp;&nbsp;&nbsp;&nbsp;char *fgets(char *string, int n, FILE *fp)<br>
+			fgets function is used to read a file line by line.<br>
+			<strong>Example : </strong><br>
+&nbsp;&nbsp;&nbsp;&nbsp;fgets(buffer, size, fp);<br>
+			<i>buffer</i> :  buffer to put the data in.<br>
+			<i>size</i> : size of the buffer<br>
+			<i>fp</i> : file pointer</td>
+		</tr>
+		<tr>
+			<td>fprintf()<br>
+			To write into a file</td>
+			<td>
+				<strong>syntax</strong> : <br>
+&nbsp;&nbsp;&nbsp;&nbsp;int fprintf(FILE *fp, const char *format, ...);<br>
+				fprintf() function writes string into a file pointed by fp.<br>
+				<strong>Example</strong> : <br>
+&nbsp;&nbsp;&nbsp;&nbsp;fprintf(fp, “data”); or<br>
+&nbsp;&nbsp;&nbsp;&nbsp;fprintf(fp, “text %d”, variable_name);<br>
+			</td>
+		</tr>
+	</table><br><br>
+	<strong>File operation Mode</strong> : <br>
+	<table>
+		<tr>
+				<th><strong>mode</strong></th>
+				<th><strong>description</strong></th>
+		</tr>
+		<tr>
+			<td><i> r </i></td>
+			<td> Opens a file in read mode and sets pointer to the first character in the file.<br> It returns null if file does not exist.</td>
+		</tr>
+		<tr>
+			<td><i> w </i></td>
+			<td> Opens a file in write mode.<br> It returns null if file could not be opened.<br> If file exists, data are overwritten.</td>
+		</tr>
+		<tr>
+			<td><i> a </i></td>
+			<td> Opens a file in append mode.<br> It returns null if file couldn’t be opened.</td>
+		</tr>
+		<tr>
+			<td><i> r+ </i></td>
+			<td> Opens a file for read and write mode and sets pointer to the first character in the file.</td>
+		</tr>
+		<tr>
+			<td><i> w+ </i></td>
+			<td> Opens a file for read and write mode and sets pointer to the first character in the file.</td>
+		</tr>
+		<tr>
+			<td><i> a+ </i></td>
+			<td>Opens a file for read and write mode and sets pointer to the first character in the file.</td>
+		</tr>
+	</table><br><br>
+	<strong>Inbuilt functions for file handling</strong> : <br>
+	<table>
+		<tr>
+			<th><strong>Function</strong></th>
+			<th>description</th></tr>
+<tr><td>fopen()</td><td>create a new file or open a existing file</td></tr>
+<tr><td>fclose()</td><td>closes a file</td></tr>
+<tr><td>getc()</td><td>reads a character from a file</td></tr>
+<tr><td>putc()</td><td>writes a character to a file</td></tr>
+<tr><td>fscanf()</td><td>reads a set of data from a file</td></tr>
+<tr><td>fprintf()</td><td>writes a set of data to a file</td></tr>
+<tr><td>getw()</td><td>reads a integer from a file</td></tr>
+<tr><td>putw()</td><td>writes a integer to a file</td></tr>
+<tr><td>fseek()</td><td>set the position to desire point</td></tr>
+<tr><td>ftell()</td><td>gives current position in the file</td></tr>
+<tr><td>rewind()</td><td>set the position to the begining point</td></tr>
+</table><br><br>
+  </body>
+</html>

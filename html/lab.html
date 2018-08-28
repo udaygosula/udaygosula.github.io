@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Gpre'C'</title>
+		<meta name = "viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,"/>
+		<link rel = "stylesheet" type = "text/css" href = "../css/main.css"/>
+	</head>
+	<body>
+		<p>
+			<p id = "sideHeading">Lab_Module : 1</p>
+			<strong>/* Program to find the roots of a quadratic equtaion using switch statement */</strong><br>
+#include&lt;stdio.h&gt;<br>
+#include&lt;math.h&gt;<br>
+int main()<br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int dVal;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>/* dVal : discriminant value */</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;float r, r1, r2;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>/* roots */</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;float a, b, c, d;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>/* a,b,c : input values; d : discriminant */</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;float rVal, iVal;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>/* rVal : real value; iVal : imaginary value */</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("\n Enter 3 co-efficients : ");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scanf("%f %f %f", &amp;a, &amp;b, &amp;c);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(a==0)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r=-b/c;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("\n Only root of quadratic equation : %7.3f", r);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exit();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d=b*b-4*a*c;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(d>0)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dVal=1;<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else if(d==0)<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dVal=2;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dVal=3;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;switch(dVal)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case 1:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("\n Real &amp; Distinct roots of quadratic equation are: ");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r1=(-b+sqrt(d))/(2*a);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r2=(-b-sqrt(d))/(2*a);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(" r1=%.3f &amp; r2=%.3f", r1, r2);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case 2:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("\n Real and equal roots of quadratic equation are: ");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r1=-b/(2*a);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r2=r1;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(" r1 &amp; r1 : %.3f", r1);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case 3:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d=sqrt(abs(d));<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rVal=-b/(2*a);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iVal=d/(2*a);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("\n Complex Roots of quadratic equation are: ");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(" r1=%.2f+i%.3f &amp;", rVal, iVal);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(" r2=%.2f-i%.3f", rVal, iVal);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>
+}<br>
+<strong>Output</strong> : <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter 3 numbers : <i>4 -2 10</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Complex Roots of quadratic equation are: <i> 0.25+1.561</i> &amp; <i>0.25-1.561</i><br>
+<p id = "sideHeading">Lab_Module : 2</p>
+<strong>/* Program to check the given number is an ADAM NUMBER using looping statement */</strong><br>
+#include&lt;stdio.h&gt;<br>
+#include&lt;math.h&gt;<br>
+int main()<br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int inp,rev = 0,sqr,sqr_rev;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>/* inp : input value; rev : reverse of inp; sqr : square of inp; sqr_rev : reverse of sqr */</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Enter input : ");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scanf("%d",&amp;inp);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while (inp &gt; 0)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rev = rev * 10 + inp % 10;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inp /= 10;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sqr = inp * inp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while (sqr &gt; 0)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sqr_rev = sqr_rev * 10 + sqr % 10;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sqr /= 10;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(rev*rev == sqr_rev)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("\n %d is Adam's number",inp);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("\n %d is not Adam's number",inp);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>
+}<br>
+<strong>Output</strong> : <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter input : <i>12</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>12</i> is Adam's number<br><br>
+<strong>/* Program to print cosine series using looping statement */</strong><br>
+#include&lt;stdio.h&gt;<br>
+int main()<br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int i, n;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>/* i : iterator; n : number of cosine values */</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;float x, sum=1, t=1;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>/* x : input; sum : cosine series sum; t : temperorary storage of sum*/</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(" Enter the value for x : ");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scanf("%f",&amp;x);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(" Enter the value for n : ");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scanf("%d",&amp;n);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x = x * 3.14159/180;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>/* Loop to calculate the value of Cosine */</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(i=0; i&lt;n; i++)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t = t * (-1) * x * x / (2*i * (2*i-1));<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sum=sum+t;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(" The value of Cos(%f) is : %.4f", x, sum);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>
+}<br>
+<strong>Output</strong> : <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter the value for x : <i>30</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter the value for n : <i>5</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The value of Cos(0.523598) is : <i>0.86605</i><br><br>
+<p id = "sideHeading">Lab_Module : 3</p>
+<strong>/* Program to find maximun and minimum element in array */</strong><br>
+#include &lt;stdio.h&gt;<br>
+int main()<br>
+{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int arr[100];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>/* arr : array with maximum size 100 */</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int i, max, min, size;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>/* i : looping iterative element; max : maximum array element; min : minimum  array element; size : array size */</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Enter size of the array : ");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scanf("\n%d", &amp;size);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Enter elements in the array : ");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(i=0; i&lt;size; i++)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scanf("%d", &amp;arr[i]);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;max = arr[0];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(i=1;i&lt;size;i++)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(a[i] &gt; max)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;max = arr[i];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;min = arr[0];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(i=1; i&lt;size; i++)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(arr[i] &lt; min)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;min = arr[i];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Maximum element : %d\nMinimum element : %d", max, min);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>
+}<br>
+<strong>Output </strong> : <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter size of the array : <i>5</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter elements in the array : <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>-10<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;48<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;100<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-1</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Maximum element : <i>100</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Minimum element : <i>-10</i><br><br>
+<strong>/* Program to find standard deviation and variance */</strong><br>
+#include &lt;stdio.h&gt;<br>
+#include&lt;math.h&gt;<br>
+int main()<br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;float x[100];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int  i, n;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;float avg, variance, std_deviation, sum = 0, sum1 = 0;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Enter the size of n :  ");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scanf("%d",&amp;n);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Enter the values of array :  ");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (i=0; i&lt;n; i++)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scanf("\n%f",&amp;x[i]);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (i=0; i&lt;n; i++)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sum = sum + x[i];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;avg = sum / (float)n;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (i=0; i&lt;n; i++)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sum1 = sum1 + pow((x[i] - avg), 2);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;variance = sum1 / (float)n;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;std_deviation = sqrt(variance);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Variance of all elements : %.2f\n", variance);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Standard deviation : %.2f\n", std_deviation);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>
+}<br>
+<strong>Output</strong> : <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter the value of inp : <i>5</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter the values of array : <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>34<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;88<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;32<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Variance of all elements : <i>794.56</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Standard deviation : <i>28.19</i><br>
+<p id = "sideHeading">Lab_Module : 4</p>
+<strong>/* Program to check given string is palindrome */</strong><br>
+#include &lt;stdio.h&gt;<br>
+#include &lt;string.h&gt;<br>
+int main()<br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;char inp[100], rev[100]; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(" Enter the string : ");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gets(inp);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strcpy(rev,inp);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strrev(rev);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(strcmp(inp,rev) == 0)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("%s is not palindrome", inp);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("%s is palindrome", inp);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>
+}<br>
+<strong>Output</strong> : <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter the string : <i>abbccbba</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>abbccbba</i> is palindrome<br>
+<p id = "sideHeading">Lab_Module : 5</p>
+<strong>/* Program to perform matrix multiplication */</strong><br>
+#include&lt;stdio.h&gt; <br>
+int main() <br>
+{ <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int a[3][3],b[3][3],c[3][3],i,j,k,m,x; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>/* Considered the order of each matrix is 3*3 */</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Press\n1. Sum\n2. Difference\n3. Multiplication\n4. Transpose\n5. symetric\nOther numbers to exit.\n"); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scanf("%d",&amp;x); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(i=0;i&lt;3;i++) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(j=0;j&lt;3;j++) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b[i][j]=0; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[i][j]=0; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c[i][j]=0; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(x&gt;=1 &amp;&amp; x&lt;=3)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Enter two matrices \n"); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(i=0;i&lt;3;i++) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(j=0;j&lt;3;j++) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scanf("%d",&amp;a[i][j]); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(i=0;i&lt;3;i++) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(j=0;j&lt;3;j++) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scanf("%d",&amp;b[i][j]); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Enter the elements of matrix\n"); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(i=0;i&lt;3;i++) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(j=0;j&lt;3;j++) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scanf("%d",&amp;a[i][j]); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;switch(x) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case 1: <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(i=0;i&lt;3;i++) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(j=0;j&lt;3;j++) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c[i][j]=a[i][j]+b[i][j]; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(i=0;i&lt;3;i++) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(j=0;j&lt;3;j++) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("%d",c[i][j]); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("\n"); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("\nis the sum of the matrices."); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case 2: <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(i=0;i&lt;3;i++) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(j=0;j&lt;3;j++) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c[i][j]=a[i][j]-b[i][j]; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(i=0;i&lt;3;i++) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(j=0;j&lt;3;j++) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("%d",c[i][j]); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("\n"); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("\nis the difference of the matrices."); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case 3: <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(i=0;i&lt;3;i++) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(j=0;j&lt;3;j++) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(k=0;k&lt;3;k++) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c[i][j]=c[i][j]+(a[i][k]*b[k][j]); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(i=0;i&lt;3;i++) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(j=0;j&lt;3;j++) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("%d",c[i][j]); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("\n"); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("\nis the multiplication of two matrix."); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case 4: <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(i=0;i&lt;3;i++) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(j=0;j&lt;3;j++) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b[j][i]=a[i][j]; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(i=0;i&lt;3;i++) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(j=0;j&lt;3;j++) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("%d ",b[i][j]); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("\n"); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("is the transpose matrix."); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case 5: <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;k=0; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m=0; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(i=0;i&lt;3;i++) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(j=0;j&lt;3;j++) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(a[i][j]==a[j][i]) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;k=k+1; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m=m+1; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(m&gt;0) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("its not symetric"); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("its symetric"); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>
+}<br>
+<strong>Output</strong> : <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Press<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. Sum<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. Difference<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3. Multiplication<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4. Transpose<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5. Symetric<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Other numbers to exit.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>3</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter the elements of matrix<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12 15 18<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;23 28 33<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;34 41 48<br></i>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;is the multiplication of two matrices.
+<br><br>
+<strong>/* Program to solve TOWER OF HANOI */</strong><br>
+#include&lt;stdio.h&gt;
+void towerOfHanoi(int n, char from_rod, char to_rod, char aux_rod)<br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (n == 1)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("\n Move disk 1 from rod %c  to rod  %c", from_rod, to_rod);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;towerOfHanoi(n-1, from_rod, aux_rod, to_rod);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("\n Move disk %d from rod %c  to rod  %c", n, from_rod, to_rod);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;towerOfHanoi(n-1, aux_rod, to_rod, from_rod);<br>
+}<br>
+int main()<br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int n;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Enter number of disks : ");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scanf("%d",&amp;n);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;towerOfHanoi(n, 'A', 'C', 'B');<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>/* A, B and C are names of rods */</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>
+}<br>
+<strong>Output</strong> : <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter number of disks : <i>4</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Move disk <i>1</i> from rod <i>A</i>  to rod  <i>B</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Move disk <i>2</i> from rod <i>A</i>  to rod  <i>C</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Move disk <i>1</i> from rod <i>B</i>  to rod  <i>C</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Move disk <i>3</i> from rod <i>A</i>  to rod  <i>B</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Move disk <i>1</i> from rod <i>C</i>  to rod  <i>A</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Move disk <i>2</i> from rod <i>C</i>  to rod  <i>B</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Move disk <i>1</i> from rod <i>A</i>  to rod  <i>B</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Move disk <i>4</i> from rod <i>A</i>  to rod  <i>C</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Move disk <i>1</i> from rod <i>B</i>  to rod  <i>C</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Move disk <i>2</i> from rod <i>B</i>  to rod  <i>A</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Move disk <i>1</i> from rod <i>C</i>  to rod  <i>A</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Move disk <i>3</i> from rod <i>B</i>  to rod  <i>C</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Move disk <i>1</i> from rod <i>A</i>  to rod  <i>B</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Move disk <i>2</i> from rod <i>A</i>  to rod  <i>C</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Move disk <i>1</i> from rod <i>B</i>  to rod  <i>C</i><br><br>
+<p id = "sideHeading">Lab_Module : 6</p>
+<strong>/* Program to find GCD using recursive function */</strong><br>
+#include&lt;stdio.h&gt;<br>
+int gcd(int n1, int n2);<br>
+int main()<br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int n1, n2;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Enter two numbers : ");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scanf("\n%d\n%d", &amp;n1, &amp;n2);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("G.C.D of %d and %d is %d", n1, n2, gcd(n1,n2));<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>
+}<br>
+int gcd(int n1, int n2)<br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (n2 != 0)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return gcd(n2, n1%n2);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return n1;<br>
+}<br>
+<strong>Output</strong> : <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter two numbers :<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>366<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;60</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;G.C.D of <i>366</i> and <i>60</i> is <i>6</i><br><br>
+<strong>/* Program to swap two numbers using pointers and function. */</strong><br>
+#include&lt;stdio.h&gt;<br>
+void swapFun(int *n1, int *n2);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>/* swapFun() declaration */</i><br>
+int main()<br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int num1, num2;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Enter first number : ");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scanf("%d",&amp;num1);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("\nEnter second number : ");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scanf("%d",&amp;num2);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;swapFun(&amp;num1,&amp;num2);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>/* address of num1 and num2 is passed to the swap function */</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("\nFirst number : %d\n", num1);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Second number : %d", num2);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>
+}<br>
+<i>/* swapFun() defination */</i><br>
+void swapFun(int *n1, int *n2)<br>
+{<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>/* pointer n1 and n2 points to the address of num1 and num2 respectively */</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int temp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;temp = *n1;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*n1 = *n2;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*n2 = temp;<br>
+}<br>
+<strong>Output </strong> : <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter first number : <i>5</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter second number : <i>10</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;First number = <i>10</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Second number2 = <i>5</i><br><br>
+<strong>/* Program to find maximum of given numbers using dynamic memory allocation. */</strong><br>
+#include &lt;stdio.h&gt;<br>
+#include &lt;stdlib.h&gt;<br>
+int main()<br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int i,n,max = 0;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int *element;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Enter the total numer of elements : ");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scanf("%d",&amp;n);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;element=(float*)malloc(n*sizeof(int));<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>/* Memory is allocated for 'n' elements */</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(element==NULL)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("\nNo memory is allocated.");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("\n");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(i=0;i&lt;n;++i)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(" Enter number %d: ",i+1);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scanf("%d",element+i);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;max = *element;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(i=1;i&lt;n;++i)<br>  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(max&lt;*(element+i))<br> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;max = *(element+i);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("\nThe Largest element is :  %d ",max);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>
+}<br>
+<strong>Output</strong> : <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter the total numer of elements : <i>5</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter number 1 : <i>15</i> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter number 2 : <i>23</i> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter number 3 : <i>8</i> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter number 4 : <i>11</i> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter number 5 : <i>16</i> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Largest number is :  <i>23</i><br><br>
+<p id = "sideHeading">Lab_Module : 7</p>
+<strong>/* Program to find GCD using recursive function */</strong><br>
+#include &lt;stdio.h&gt;<br>
+struct student<br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;char name[50];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int roll;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;float marks;<br>
+}s[10];<br>
+int main()<br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int i;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Enter details of students : \n");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>/* storing information */</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(i=0; i&lt;10; ++i)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s[i].roll = i+1;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("\nEnter roll number %d,\n");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scanf("%s",s[i].roll);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Enter name : ");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scanf("%s",s[i].name);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Enter marks : ");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scanf("%f",&amp;s[i].marks);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("\n");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Displaying Information:\n\n");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>/* displaying information */</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(i=0; i&lt;10; ++i)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("\nRoll number: \n");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;puts(s[i].roll);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Name : ");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;puts(s[i].name);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Marks : %.1f",s[i].marks);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("\n");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>
+}<br>
+<strong>Output</strong> : <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter details of students : <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter roll number : <i>1</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter name : <i>Tom</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter marks : <i>98</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter details of students : <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter name : <i>Jerry</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter marks : <i>89</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Displaying Information:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Roll number: <i>1</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Name : <i>Tom</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Marks : <i>98</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Roll number : <i>2</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter name : <i>Jerry</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter marks : <i>89</i><br><br>
+<p id = "sideHeading">Lab_Module : 8</p>
+<strong>/ * Program to open, write and close a file : */</strong><br>
+#include &lt;stdio.h&gt;<br>
+#include &lt;string.h&gt;<br>
+int main()<br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FILE *fp ;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;char data[50];fname[50]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>/* opening an existing file */</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Enter the filename : ");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gets(fname);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Opening the file in write mode");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fp = fopen("fname", "w");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if ( fp == NULL )<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Could not open file" ) ;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 1;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf( "\nEnter text to write in the file");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>/* getting input from user */</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while ( strlen ( gets( data ) ) &gt; 0 )<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/* writing in the file */<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fputs(data, fp);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fputs("\n", fp);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>/* closing the file  */</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Closing the file");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fclose(fp);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>  
+}<br>
+<strong>Output</strong> : <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter the filename : <i>fileTest.c</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Opening the file in write mode<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter text to write in the file<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i> Get ready for DS</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Closing the file<br><br>
+<strong>/* Open, Read and close a file: reading string by string */</strong><br>
+#include&lt;stdio.h&gt;<br>
+int main()<br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FILE *fp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;char data[50],fname[50];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Enter the filename : ");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gets(fname);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Opening the file in read mode");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fp = fopen("fname", "r" );<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if ( fp == NULL )<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Could not open file");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 1;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Reading the file");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while( fgets ( data, 50, fp ) != NULL )<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf( "%s" , data );<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Closing the file test.c");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fclose(fp);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>
+}<br><br>
+<strong>Output</strong> : <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter the filename : <i>fileTest.c</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Opening the file in read mode<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i> Get ready for DS</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Closing the file<br><br>
+	</p>
+	</body>
+</html>

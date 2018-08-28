@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Gpre'C'</title>
+		<meta name = "viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,"/>
+		<link rel = "stylesheet" type = "text/css" href = "../css/main.css"/>
+		<style>
+			html{
+				height : 100%;
+			}body{
+				height : 90%;
+			}
+		</style>
+	</head>
+  <body>
+	<p style = "text-align : center; color : brown; font-family : Cooper; font-size : 250%;"> UNIT - IV</p>
+	<p style = "text-align : center; color : brown; font-family : Cooper; font-size : 150%; padding-top : -10%">Pointers</p>
+	<ul>
+		<li>Pointer is a variable that stores/points the address of another data item(variable or an array element) of same data type.</li>
+		<li>Pointer is used to allocate memory dynamically(at run time).</li>
+	</ul>
+	<i>Note</i> : <br>
+	&nbsp;&nbsp;&nbsp;&nbsp;When a variable is defined, a memory location is assigned for it, in which it's value will be stored.<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;To check the address of any variable use '<i>&</i>' with variable name.<br>
+	<strong>syntax</strong> : <br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&var_name;<br>
+	<strong>Example</strong> : <br>
+	&nbsp;&nbsp;&nbsp;&nbsp;int a = 10;<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;printf("The value of a : %d\nThe address of a : %u",a,&a);<br>
+	<strong>Output</strong> : <br>
+	&nbsp;&nbsp;&nbsp;&nbsp;<i>The value of a : 10</i><br>
+	&nbsp;&nbsp;&nbsp;&nbsp;<i>The address of a : fff4</i><br><br>
+	<p id = "sideHeading">Pointer Declaration and Initialization : </p>
+	<table>
+		<tr>
+			<th><strong>aspect</strong></th>
+			<th><strong>syntax</strong></th>
+			<th><strong>example</strong></th>
+		</tr>
+		<tr>
+			<td>declaration</td>
+			<td> data_type *var_name;</td>
+			<td>int *a;</td>
+		</tr>
+		<tr>
+			<td>initializing</td>
+			<td>data_type *var_name = &var2_name;</td>
+			<td>
+			&nbsp;&nbsp;&nbsp;&nbsp;int a = 10;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;int *ptr = &a;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;printf("Number : %d\nAddress : %x",*ptr,ptr);<br>
+			<strong>example</strong> : <br>
+			&nbsp;&nbsp;&nbsp;&nbsp;Number : <i>10</i><br>
+			&nbsp;&nbsp;&nbsp;&nbsp;Address : <i>fff4</i><br>
+			</td>
+		</tr>
+	</table><br>
+	<p id = "sideHeading">Pointer Operations : </p>
+	There are four different types of operations performed on poibters
+	<ul>
+		<li>Incrementing/Decrementing a pointer</li>
+		<li>Addition/Subtraction of a constant number to a pointer</li>
+		<li>Subtraction of one pointer from another</li>
+		<li>Comparison of two pointers</li>
+	</ul>
+	<table>
+		<tr>	
+		<th><strong>Opeator</strong></th>
+		<th><strong>Example</strong></th>
+		</tr>
+		<tr>
+			<td> ++/-- </td>
+			<td>int a=5,*x;
+				x=&amp;a;
+				x++;
+			</td>
+		</tr>
+		<tr>
+			<td> +(constant) </td>
+			<td>int a = 10, *x, y;
+			x = &a;
+			y = x + 5
+			</td>
+		</tr>
+		<tr>
+			<td> -(pointer) </td>
+			<td>int a = 10, b = 20, *x, *y;
+			x = &a; y = &b;
+			x-y;
+			</td>
+		</tr>
+		<tr>
+			<td> =/!=</td>
+			<td>int a = 10, *x *y;
+			x = &a; y = &a;
+			if(x == y)
+			printf("Both are equal");
+			</td>
+		</tr>
+	</table><br><br>
+	<strong>Pointer to array</strong> : <br>
+	<ul>
+		<li>we can use a pointer to point to an array, and then we can use that pointer to access the array elements.</li>
+	</ul>
+	<strong>Example</strong> : <br>
+&nbsp;&nbsp;&nbsp;&nbsp;int i;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int a[5] = {1, 2, 3, 4, 5};<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int *p = a; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<i>/* same as int*p = &a[0] */</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;for (i=0; i&lt;5; i++)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("%d ", *p);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p++;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+	<strong>Output</strong> : <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<i>1 2 3 4 5</i><br>
+	<i>Note</i> : <br>
+	<ul>
+		<li>printf("%d",a[i]); ----- prints the array, by incrementing index</li>
+		<li>printf("%d",i[a]); ----- prints the array, by incrementing index</li>
+		<li>printf("%d",a+i); ------ prints the address of array elements by incrementing index</li>
+		<li>printf("%d",*(a+i)); ----- prints the array, by incrementing index</li>
+		<li>printf("%d",*a); ------ prints the starting element of array, i.e, a[0]</li>
+	</ul>
+	<strong>Pointer to function</strong> : <br>
+	<ul>
+		<li>Pointer as a function parameter is used to hold addresses of arguments passed during function call. This is also known as call by reference.</li>
+	</ul>
+	<strong>syntax</strong> : <br>
+	fun_name(&var1, &var2, ...);<br>
+	<i>/* Function call */</i><br>
+	return_type fun_name(data_type *var1, data_type *var2, ...)<br>
+	{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;/* statements */<br>
+	}<br>
+	<strong>Function returning pointer</strong> : <br>
+	<ul>
+		<li>A function can also return a pointer to the calling function.</li>
+		<li>Local variables have scope only inside the function. Hence if you return a pointer connected to a local variable, that pointer will be pointing to nothing when the function ends.</li>
+	</ul>
+	<strong>syntax</strong> : <br>
+	return_type fun_name(data_type *var1, data_type *var2, ...)<br>
+	{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;/* statements */<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return var;<br>
+	}<br>
+	<p id = "sideHeading">Dynamic memory allocation : </p>
+	<ul>
+		<li>Dynamic memory allocationto is to allocate memory at runtime.</li>
+		<li>Dynamic memory allocation is possible by 4 functions of <i>stdlib.h</i> header file.</li>
+		<li>The four functions used are
+			<ol type = "i">
+				<li>malloc()</li>
+				<li>calloc()</li>
+				<li>realloc()</li>
+				<li>free()</li>
+			</ol>
+		</li>
+	</ul>
+	<table>
+		<tr>
+			<th><strong>static memory allocation</strong></th>
+			<th><strong>dynamic memory allocation</strong></th>
+		</tr>
+		<tr>
+			<td>memory is allocated at compile time.</td>
+			<td>memory is allocated at run time.</td>
+		</tr>
+		<tr>
+			<td>memory can't be increased while executing program.</td>
+			<td>memory can be increased while executing program.</td>
+		</tr>
+		<tr>
+			<td>used in array.</td>
+			<td>used in linked list.</td>
+		</tr>
+	</table><br>
+	Functions used in dynamic memory allocation : <br>
+	<table>
+		<tr>
+			<th><strong>function</strong></th>
+			<th><strong>description</strong></th>
+			<th><strong>syntax</strong></th>
+			<th><strong>example</strong></th>
+		</tr>
+		<tr>
+			<td>malloc()</td>
+			<td>It allocates single block of requested memory.<br>It doesn't initialize memory at execution time, so it has garbage value initially.<br>
+It returns NULL if memory is not sufficient.</td>
+			<td>ptr = (data_type*) malloc (byte-size);</td>
+			<td>
+				int n = 10, *ptr;<br>
+				ptr = (int*) malloc (n*sizeof(int));
+			</td>
+		</tr>
+		<tr>
+			<td>calloc()</td>
+			<td>It allocates multiple block of requested memory.<br>It initially initialize all bytes to zero.<br>It returns NULL if memory is not sufficient.</td>
+			<td>ptr=(data_type*) calloc (number, byte-size);</td>
+			<td>
+				int n = 10, *ptr;<br>
+				ptr = (int*) calloc (n,sizeof(int));
+			</td>
+		</tr><tr>
+			<td>realloc()</td>
+			<td>It reallocates the memory occupied by malloc() or calloc() functions. It changes the memory size.</td>
+			<td>ptr = realloc (ptr,new_size);</td>
+			<td>
+				int n = 10, *ptr;<br>
+				ptr = (int*) calloc (n,sizeof(int));<br>
+				ptr = (int*)realloc(ptr,20);
+			</td>
+		</tr><tr>
+			<td>free()</td>
+			<td>It frees the dynamically allocated memory.</td>
+			<td>free(ptr)  </td>
+			<td>
+				int n = 10, *ptr;<br>
+				ptr = (int*) calloc (n,sizeof(int));<br>
+				free(ptr);
+			</td>
+		</tr>
+	</table><br>
+  </body>
+ </html>

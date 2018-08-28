@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Gpre'C'</title>
+		<meta name = "viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,"/>
+		<link rel = "stylesheet" type = "text/css" href = "../css/main.css"/>
+	</head>
+	<body bgcolor = "black" align = "left">
+		<div style = "background-color : black; color : white; font-family : Maiandra GD;font-size : 150%;">
+			<p>
+				(1)<br>
+#include&lt;stdio.h&gt;<br>
+void main()<br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int i, j, k;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;printf("\nEnter values of i and j");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;scanf("%d%d*,&amp;i,&amp;j);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;k = i + j-i%j;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;printf("\nNext largest multiple = %d", k);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return 0;
+}
+			</p>
+			<p>
+				(2)<br>
+#include&lt;stdio.h&gt;<br>
+void main()<br>
+{<br>
+float f, c;<br>
+printf ("Enter temperature in farenheit degrees");<br>
+scant ("%f",&amp;f);<br>
+c = 5/9.0*(f-32);<br>
+printf ("Temp, in centigrade degrees = %f", c);<br>
+}
+			</p>
+			<p>
+				(3)<br>
+#include&lt;stdio.h&gt;<br>
+void main()<br>
+{<br>
+int days, weeks, leftoverdays;<br>
+days = 31 +29 + 31 +30 + 31
+weeks = days / 7;<br>
+leftoverdays = days % 7;<br>
+printf ("days = %d", days);<br>
+printf ("weeks = %d", weeks);<br>
+printf ("left over days = %d", leftoverdays);<br>
+}<br>
+
+			</p>
+			<p>
+				(4)<br>
+#include&lt;stdio.h&gt;<br>
+void main()<br>
+{<br>
+printf ("\nEnter a number");<br>
+scanf C%d",&amp;n);<br>
+n = n / 1 0 ;<br>
+if ( n ! = 0 )<br>
+count = count + 1 ;<br>
+n = n / 1 0 ;<br>
+if ( n ! = 0 )<br>
+count = count + 1 ;<br>
+n = n / 1 0 ;<br>
+if (n t= 0 )<br>
+count = count + 1 ;<br>
+n = n / 1 0 ;<br>
+if ( n != 0 )<br>-
+count = count + 1 ;<br>
+printf {<br>"\nNo. of digits = %d", count);<br>
+}<br>
+
+			</p>
+			<p>
+				(5)<br>
+#include&lt;stdio.h&gt;<br>
+void main()<br>
+{<br>
+float r;<br>
+int x, y, points = 0, i;<br>
+printf ("\nEnter the radius of the circle");<br>
+scant ( " % f , &amp; r )<br> ;<br>
+for (x = 0 ;<br> x <= r;<br> x++)<br>
+{<br>
+for(y = 1 ;<br> y < = r ;<br> y + + )<br>
+{<br>
+if ( ( x * x + y * y )<br> <= ( r * r )<br> )<br>
+points++;<br>
+}<br>
+}<br>
+points = points * 4 + 1 ;<br>
+printf( "No. of points inside the circle = %d", points);<br>
+}<br>
+
+			</p>
+			<p>
+				(6)<br>
+#include&lt;stdio.h&gt;<br>
+#include"math.h"<br>
+void main()<br>
+{<br>
+int i, a, num, d1, d2, d3, <J4, nleft, nright, x, y;<br>
+for (i = 1000;<br> i<=9999;<br>i++)<br>
+{<br>
+a = sqrt(i)<br> ;<br>
+if ( i == a * a )<br>
+{<br>
+num = i;<br>
+d4 = num%10;<br>
+num = num/10;<br>
+d3 = num % 10;<br>
+num = num/10;<br>
+d2 = num%10;<br>
+num = num/10;<br>
+d1 =num%10;<br>
+nleft = d1* 10 + d2;<br>
+nright = d3*10 + d4;<br>
+x = sqrt (nleft);<br>
+y = sqrt( nright);<br>
+if (nleft == x * x &amp;&amp; nright == y * y)<br>
+printf ("Desired number = %d\n", i )<br> ;<br>
+122 Exploring C
+)<br>
+}<br>
+}<br>
+
+			</p>
+			<p>
+				
+(7)<br>
+#include&lt;stdio.h&gt;<br>
+void main()<br>
+{<br>
+unsigned int num, num2, no_dig = 0, p-;<br>
+int i;<br>
+printf ("\nEnter any positive integer");<br>
+scanf ("%d", &amp;num);<br>
+num2 = num;<br>
+do
+{<br>
+no_dig++;<br>
+num2 = num2/10;<br>
+}<br> while (num2 != 0 )<br> ;<br>
+for ( ;<br> no_dig > 0 ;<br> no_dig-, num %= p)<br>
+{<br>
+p = 1 ;<br>
+for (i = no_dig - 1 ;<br> i > 0 ;<br> i-)<br>
+P = P * 1 0 ;<br>
+switch (num/p)<br>
+{<br>
+case 0 :
+printf ("ZERO");<br>
+break;<br>
+case 1 :
+printf ("ONE");<br>
+break;<br>
+case 2 :
+printf("TWO");<br>
+break;<br>
+case 3 :
+printf ("THREE");<br>
+break;<br>
+case 4:
+printf ("FOUR");<br>
+break;<br>
+case 5:
+printf ("FIVE");<br>
+break;<br>
+case 6:
+printf ("SIX");<br>
+break ;<br>
+case 7:
+printf ("SEVEN");<br>
+break;<br>
+case 8:
+printf ("EIGHT");<br>
+break;<br>
+case 9 :
+printf ("NINE");<br>
+break;<br>
+}<br>
+}<br>
+}<br>
+
+			</p>
+			<p>
+				(8)<br>
+#include&lt;stdio.h&gt;<br>
+void main()<br>
+{<br>
+int d1, m1, y1, d2, m2, y2, days, dm ;<br>
+days = 1 ;<br>
+dm = 0 ;<br>
+192 Exploring C
+printf ("Input first date (dd,mm,yy)<br>");<br>
+scant ("%d %d %d", &amp;d1, &amp;m1, &amp;y1);<br>
+printf ("Input second date (dd,mm,yy)<br>");<br>
+scant ("%d %d %d", &amp;d2, &amp;m2, &amp;y2);<br>
+dm = daysinmonth ( m1 , y1 )<br> ;<br>
+while ( 1 )<br>
+{<br>
+days = days + 1 ;<br>
+d1 = d1 + 1 ;<br>
+if(d1 > dm)<br>
+{<br>
+m1 =m1 + 1 ;<br>
+d1 = 1 ;<br>
+if(m1 >12)<br>
+{<br>
+m1 = 1 ;<br>
+y1= y1 + i ;<br>
+}<br>
+dm = daysinmonth ( m l , y 1 )<br> ;<br>
+}<br>
+if(d1 ==d2&amp;&amp;m1 == m2&amp;&amp;y1 ==y2)<br>
+break ;<br>
+}<br>
+printf ("\n\nDifference in Dates = %d", days);<br>
+}<br>
+daysinmonth (m, y)<br>
+int m, y ;<br>
+{<br>
+int dm;<br>
+if (m == 11| m == 31| m == 51| m == 71| m == 81| m == 101| m == 12)<br>
+dm = 31;<br>
+if (m == 41| m === 61| m === 91| m == 11)<br>
+dm =30;<br>
+if(m==2)<br>
+{<br>
+dm = 28;<br>
+if ( ( y % 400 == 0)<br> || (y % 100 f= 0 &amp;&amp; y % 4 == 0)<br>)<br>
+dm = 29;<br>
+}<br>
+return ( dm )<br> ;<br>
+}<br>
+
+			</p>
+			<p>
+				(9)<br>
+#include&lt;stdio.h&gt;<br>
+void main()<br>
+{<br>
+int sum, notes = 0 ;<br>
+printf ("\nEnter the sum of rupees");<br>
+scanf ("%d", &amp;sum);<br>
+denom (&amp;sum, &amp;notes, 100);<br>
+denom (&amp;sum, &amp;notes, 5 0 )<br> ;<br>
+denom (&amp;sum, &amp;notes, 1 0 )<br> ;<br>
+denom (&amp;sum, &amp;notes, 5 )<br> ;<br>
+denom (&amp;sum, &amp;notes, 2 )<br> ;<br>
+notes += sum;<br>
+printf ("\nSmallest number of notes = %d", notes);<br>
+}<br>
+denom ( s , n , c )<br>
+int *s, *n, c;<br>
+{<br>
+* n + = ( ( * s )<br> / c )<br> ;<br>
+* s % = c ;<br>
+}<br>
+
+			</p>
+			<p>
+				(10)<br><br>
+Output : <br><br>
+
+Leap year <br><br>
+
+Explanation : <br><br>
+
+The macro ISLP(y)<br> takes as its argument any year y, and tests
+if the year is a leap year or not. For a year to be leap, either it
+should be an integral multiple of 400, or if the year is not
+divisible by 100, an integral multiple of 4. Why is this so and
+why we are not told this in school, I leave for you to figure out.
+The year 1992 is not divisible by 400, hence the first condition
+fails, but the second part of the condition holds good. Hence
+the output that the year is indeed a leap year is obtained.
+
+			</p>
+			<p>
+				(11)<br><br>
+Output : <br><br>
+
+A pinch of probably is much better than<br>
+...A pound of perhaps!<br><br>
+
+Explanation : <br><br>
+
+The name of a file can be used as an expansion for a macro
+definition. Saying #include MYFILE is same as saying i n clude
+"conio.h", as this is what the preprocessor sends for
+compilation after replacing the macro MYFILE.
+The file "conio;<br>h" is a header file which is required by the
+function window()<br>. This function defines an active text mode
+window. Here, the area on the console from the 10t h column,
+10th row to the 40th column, 20th row is made active. The
+function cprintf()<br> sees to it that the output of our program goes
+only to this particular area on the screen. ( printf()<br>, on the
+other hand simply sends the formatted output to the portion of
+the screen where the cursor is currently located. )<br> We can
+appreciate the point better when we take note of the fact that
+we have our output in two different lines, without having
+inserted a newline '\n'. As the message gets printed, when the
+cursor comes to the right edge of the window, it automatically
+goes to the left edge on the next line and prints the remaining
+message there.
+
+			</p>
+			<p>
+				(12)<br>
+#include&lt;stdio.h&gt;<br>
+void main()<br>
+{<br>
+int a[25], d1[24], d2[23], d3[22], i;<br>
+printf ("Enter 25 elements\n");<br>
+for ( i = 0 ;<br> i <= 2 4 ;<br> i++)<br>
+scanf ("%d", &amp;a[Q);<br>
+printf ("\nA:");<br>
+for (i = 0 ;<br> i <= 2 4 ;<br> i++)<br>
+printf ("%d", ap]);<br>
+printf ("\n\n1st, 2nd and 3rd differences are:\n");<br>
+printf ("\nD1:");<br>
+for (i = 0 ;<br>-i <= 2 3 ;<br> i++)<br>
+{<br>
+d1[i] = ap+1]-a[0;<br>
+printf ("%d",d1[0);<br>
+}<br>
+printf ("\nD2:");<br>
+for (i = 0 ;<br> i <= 2 2 ;<br> i++)<br>
+{<br>
+d2[i] = d1[i+1]-d1[i];<br>
+printf ("%d ",d2[Q);<br>
+}<br>
+printf (*\nD3:");<br>
+for (i = 0 ;<br> i <= 2 1 ;<br> i++)<br>
+{<br>
+d3[i] = d2[i+1]-d2[i];<br>
+printf ( " % d d 3 p j )<br> ;<br>
+}<br>
+}<br>
+
+			</p>
+			<p>
+				(13)<br>
+main()<br>
+{<br>
+int data[50], i;<br>
+static intfreq[26];<br>
+printf ("Enter data\n");<br>
+for ( i = 0 ;<br> i < 5 0 ;<br> i++)<br>
+{<br>
+scant ("%d",&amp;data[i]);<br> „
+if (data[i] = 1 &amp;&amp; data[i] <= 25)<br>
+freq[data[i]] = freq[data[i]+ 1 ;<br>
+}<br>
+printf ("\nFrequency of occurrence:\n");<br>
+for (i = 1 ;<br> i < 2 6 ;<br> i++)<br>
+{<br>
+if(freq[i]!=0)<br>
+printf ("%d - %d\n", i, freq[i]);<br>
+}<br>
+
+			</p>
+			<p>
+				(14)<br>
+main()<br>
+{<br>
+static char strl [ ] = "somewhere over the rainbow";<br>
+static char str2[ ] = "over";<br>
+printf ("String found at %d", xstrstr (strl, str2)<br>);<br>
+}<br>
+xstrstr (s1,s2)<br>
+char *s1,*s2;<br>
+{<br>
+int i, a, Ien1, Ien2;<br>
+Ien1 = strlen ( s 1 )<br> ;<br>
+Ien2 = strlen ( s 2 )<br> ;<br>
+for (i = 0 ;<br> i <= (Ien1 - 1 )<br> ;<br> i++)<br>
+{<br>
+a = strncmp ((s1 + i)<br>, s2, Ien2);<br>
+if ( a == 0)<br>
+return (i + 1 )<br> ;<br>
+}<br>
+return ( 0 )<br> ;<br>
+}<br>
+
+			</p>
+			<p>
+				(15)<br>
+#include&lt;stdio.h&gt;<br>
+void main()<br>
+{<br>
+static unsigned char strl [] = "Imperial Palace. Rome.
+Attention Julius Caesar. Dear Caesar, we have the clarification
+you requested. Details to follow by courier. Meanwhile stay
+clear of Brutus.";<br>
+unsigned char str2[500], str3[500];<br>
+printf ("%s\n", s t r l )<br> ;<br>
+compress (str1,str2)<br> ;<br>
+printf ("%s\n",str2);<br>
+decompress (str2, str3);<br>
+printf ("%s",str3);<br>
+}<br>
+compress (s, t)<br>
+unsigned char *s, *t ;<br>
+{<br>
+int spcount;<br>
+while (*s)<br>
+{<br>
+i f ( * s = = " )<br>
+{<br>
+spcount = 1 ;<br>
+s++;<br>
+while ( * s = = " )<br>
+{<br>
+spcount++;<br>
+s++;<br>
+if (spcount ==10)<br>
+{<br>
+*t = 23;<br>
+t++;<br>
+spcount = 0 ;<br>
+}<br>
+}<br>-
+if (spcount)<br>
+{<br>
+if (spcount == 1)<br>
+{<br>
+*t = *s+ 127;<br>
+s++;<br>
+}<br>
+else
+*t = 13 + spcount;<br>
+t++;<br>
+}<br>
+}<br>
+else
+{<br>
+*t = * s ;<br>
+t++;<br>
+s++;<br> -
+}<br>
+}<br>
+*t = 0 ;<br>
+decompress (s, t)<br>
+unsigned char *s, *t;<br>
+{<br>
+inti;<br>
+while (*s)<br>
+{<br>
+if (*s >= 127)<br>
+{<br>
+*t = " ;<br>
+t++;<br>
+*t = * s - 1 2 7 ;<br>
+t++;<br>
+}<br>
+else
+{<br>
+if ( * s> 13&amp;&amp;*s<24)<br>
+{<br>
+for (i = 0 ;<br> i< ( * s - 1 3 )<br> ;<br>i++)<br>
+{<br>
+*t = " ;<br>
+t++;<br>
+}<br>
+}<br>
+else
+{<br>
+*t = * s ;<br>
+t++;<br>
+}<br>
+}<br>
+s++;<br>
+}<br>
+*t = 0 ;<br>
+}<br>
+			</p>
+		</div>
+	</body>
+</html>

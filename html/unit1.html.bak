@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Gpre'C'</title>
+		<meta name = "viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,"/>
+		<link rel = "stylesheet" type = "text/css" href = "../css/main.css"/>
+		<style>
+			html{
+				height : 100%;
+			}body{
+				height : 90%;
+			}
+		</style>
+	</head>
+	<body>
+	<p style = "text-align : center; color : brown; font-family : Cooper; font-size : 250%;"> UNIT - I</p>
+	<p style = "text-align : center; color : brown; font-family : Cooper; font-size : 150%; padding-top : -10%">C Fundamentals</p>
+	<p id = "sideHeading">
+	Variable : </p>
+	<p><ul>
+	<li>C variable is a name of memory location. It is used to store data.</li>
+	<li>The value of the variable may get change in the program.</li>
+	<li>C variable might be belonging to any of the data type like int, float, char etc.</li>
+	</ul>
+	<strong>Rules for naming variable:</strong>
+	<ol type = "i">
+	<li>Variable name must begin with letter or underscore.</li>
+	<li>Variables are case sensitive</li>
+	<li>They can be constructed with digits, letters.</li>
+	<li>No special symbols are allowed other than underscore.</li>
+	<li>sum, height, _value are some examples for variable name</li>
+	</ol>
+	<strong>Declaring & initializing variable:</strong>
+	<ol type = "i">
+	<li>Variables should be declared in the C program before to use.</li>
+	<li>Memory space is not allocated for a variable while declaration. It happens only on variable definition.</li>
+	<li>Variable initialization means assigning a value to the variable.</li>
+	</ol>
+	</p>
+	<table>
+	<tr>
+	<th><strong>Type</strong> </th>
+	<th><strong>Syntax</strong> </th>
+	</tr>
+	<tr>
+	<td>Variable declaration<br><br><br> </td>
+	<td>	
+data_type variable_name;<br>
+Example: int a, b, c;<br>
+float area; </td>
+	</tr>
+	<tr>
+	<td>Variable initialization<br><br><br></td>
+	<td>data_type variable_name = value;<br>
+Example: int a = 120, b = -125;<br>
+char abc = 'a', inp = '1';
+	</td></tr>
+	</tr>
+	</table><br>
+	<strong>Types of Variables</strong>
+	<ol type = "i">
+	<li><i>local variable</i> : A variable that is declared inside the function or block.
+	</li>
+	<li><i>global variable </i>: A variable that is declared outside the function or block.
+	Any function can change the value of the global variable. It is available to all the functions.
+	</li>
+	<li><i>static variable </i>: A variable that is declared with static keyword. It retains its value between multiple function calls.</li>
+	<li><i>automatic variable </i>: All variables in C that is declared inside the block, are automatic variables by default. By we can explicitly declare automatic variable using auto keyword.</li>
+	<li><i>external variable </i>: We can share a variable in multiple C source files by using external variable. To declare a external variable, you need to use extern keyword.</li>
+	</ol>	
+	</p>
+	<p id = "sideHeading">
+	Data Types : </p>
+	<p><ul>
+	<li>C data types are defined as the type of data  that a variable can store to perform a specific operation.</li>
+	<li>Data types are used to define a variable before to use in a program.</li>
+	<li>Size of variable, constant and array are determined by data types.</li>
+	</ul>
+	<table>
+	<tr>
+	<th><strong>Types</strong> </th>
+	<th><strong>Data Types</strong> </th>
+	</tr>
+	<tr>
+	<td>Basic data types </td>
+	<td>int, char, float, double </td>
+	</tr>
+	<tr>
+	<td>Enumeration data type </td>
+	<td>enum </td>
+	</tr>
+	<tr>
+	<td>Derived data type </td>
+	<td>pointer, array, structure, union </td>
+	</tr>
+	<tr>
+	<td>Void data type</td>
+	<td>void</td>
+	</tr>
+	</table>
+	</p>
+	<p id = "sideHeading">
+	C tokens : </p>
+	<p><ul>
+    <li>C tokens are the basic buildings blocks in C language which are constructed together to write a C program.</li>
+    <li>Each and every smallest individual units in a C program are known as C tokens.</li></ul>
+C tokens are of six types. They are,
+	<ol type = "i">
+	<li>Identifiers --------- (eg: main, sum),</li>
+    <li>Keywords ------------ (eg: void, if, auto),</li>
+    <li>Constants ----------- (eg: 10, 20),</li>
+    <li>Strings ------------- (eg: “total”, “hello”),</li>
+    <li>Special symbols ----- (eg: {, #),</li>
+    <li>Operators ----------- (eg: +, *, &gt, &lt=, &&)</li>
+	</ol></p>
+	<p id = "sideHeading">
+	Identifiers : </p>
+	<p><ul>
+	<li>Each program elements in a C program are given a name called identifiers.</li>
+    <li>Names given to identify Variables, functions and arrays are examples for identifiers. eg. x is a name given to integer variable in above program.</li></ul>
+<strong>Rules for constructing identifier name in C:</strong>
+	<ol type = "i">
+    <li>First character should be an alphabet or underscore.</li>
+    <li>Succeeding characters might be digits or letter.</li>
+    <li>Punctuation and special characters aren’t allowed except underscore.</li>
+    <li>Identifiers should not be keywords.</li>
+	</ol></p>
+	<p id = "sideHeading">
+	Keywords : </p>
+	<p><ul>
+	<li>Keywords are pre-defined words in a C compiler.</li>
+    <li>Each keyword is meant to perform a specific function in a C program.</li>
+    <li>Since keywords are referred names for compiler, they can’t be used as variable name.</li>
+	</ul>
+	32 keywords are
+	</p>
+	<table>
+		<tr>
+			<td>auto</td>
+			<td>break</td>
+			<td>case</td>
+			<td>char</td>
+		</tr>
+		<tr>
+			<td>const</td>
+			<td>continue</td>
+			<td>default</td>
+			<td>do</td>
+		</tr>
+		<tr>
+			<td>int</td>
+			<td>long</td>
+			<td>register</td>
+			<td>return</td>
+		</tr>
+		<tr>
+			<td>short</td>
+			<td>signed</td>
+			<td>sizeof</td>
+			<td>static</td>
+		</tr>
+		<tr>
+			<td>struct</td>
+			<td>switch</td>
+			<td>typedef</td>
+			<td>union</td>
+		</tr>
+		<tr>
+			<td>unsigned</td>
+			<td>void</td>
+			<td>volatile</td>
+			<td>while</td>
+		</tr>
+		<tr>
+			<td>double</td>
+			<td>else</td>
+			<td>enum</td>
+			<td>extern</td>
+		</tr>
+		<tr>
+			<td>float</td>
+			<td>for</td>
+			<td>goto</td>
+			<td>if</td>
+		</tr>
+	</table>
+	<p id = "sideHeading">
+	Constants : </p>
+	<p><ul>
+	<li>C Constants are also like normal variables. But, only difference is, their values can not be modified by the program once they are defined.</li>
+    <li>Constants refer to fixed values. They are also called as literals</li>
+	<li>Constants may be belonging to any of the data type.</li>
+	</ul>
+	<strong>Syntax:</strong>
+	const data_type variable_name; (or) const data_type *variable_name;
+	<br><br>
+	<strong>Types of Constants : </strong>
+	<ol type = "i">
+	<li>Integer constants</li>
+	<li>Real or Floating point constants</li>
+	<li>Octal & Hexadecimal constants</li>
+	<li>Character constants</li>
+	<li>String constants</li>
+	<li>Backslash character constants</li>
+	</ol>
+	<table>
+	<tr>
+	<th><strong>Constant type</strong> </th>
+	<th><strong>Example (data type)</strong> </th>
+	</tr>
+	<tr>
+	<td>Integer constants<br><br><br><br> </td>
+	<td>int (53, 762, -478 )</br>
+		unsigned int (5000u, 1000U )</br>
+		long int(2583249)<br>
+		long long int(389333125) </td>
+	</tr>
+	<tr>
+	<td>Real (or) <br>Floating point constants </td>
+	<td>float (10.456789)</br>
+	doule (600.123456789) </td>
+	</tr>
+	<tr>
+	<td>Octal constant </td>
+	<td>int (013) /*starts with 0 */ </td>
+	</tr>
+	<tr>
+	<td>Hexadecimal constant </td>
+	<td>int (0x90) /*starts with 0x*/ </td>
+	</tr>
+	<tr>
+	<td>character constants<br><br> </td>
+	<td>char (‘A’, ‘B’, ‘C’)<br> /*in single quotation marks*/ </td>
+	</tr>
+	<tr>
+	<td>string constants<br><br> </td>
+	<td>char (“Qwerty”, “HELLO”, “A”)<br> /*in double quotaion marks*/
+	 </td>
+	</tr>
+	<tr>
+	<td>Backslash character constants<br><br></td>
+	<td> \n, \v, \t</td>
+	</tr>
+	</table><br>
+	</p>
+	<p id = "sideHeading">String : </p>
+	<p><ul>
+	<li>It is an array of characters that is terminated by \0 (null character).</li>
+	<li>Strings are always enclosed by double quotes.</li>
+	</ul>
+	There are two ways to declare string in c language.<br>
+	<table>
+		<tr>
+			<th><strong> Type </strong> </th>
+			<th><strong> Example </strong> </th>
+		</tr>
+		<tr>
+			<td> char array <br><br><br><br> </td>
+			<td>char name[6] = {'g','p','r','e','c','\0'};<br>
+								/*size is specified*/<br>
+				char clg_name[] = {'g','p','r','e','c','\0'};<br>
+								/*size is not specified*/
+			 </td>
+		</tr>
+		<tr>
+			<td> string literal </td>
+			<td>char name[] = "gprec";</td>
+		</tr>
+	</table><br><br>
+	The only difference is that string literal cannot be changed whereas string 
+	declared by char array can be changed.<br>
+	<i>Note</i> : Description on string functions are given in UNIT - III
+	</p>
+	<p id = "sideHeading">
+	Special Symbols : </p>
+	<p><ul>
+		<li>Special symbols in C are with some special meaning.</li> 
+		<li>They are used for some specific function. </li>
+	</ul>
+	<table>
+		<tr>
+			<th><strong> Name </strong> </th>
+			<th><strong> Description </strong> </th>
+		</tr>
+		<tr>
+			<td>Brackets []<br><br> </td>
+			<td>Opening and closing brackets are used as array element reference.
+				<br>These are used to indicate single & multidimensional subscripts.
+			 </td>
+		</tr>
+		<tr>
+			<td>Braces {} </td>
+			<td>Opening and closing curly braces are used to mark start and end of 
+				a block. </td>
+		</tr>
+		<tr>
+			<td>Comma <br>( , ) </td>
+			<td>To separate more than one statement , (Comma) is used </td>
+		</tr>
+		<tr>
+			<td>Semicolon <br>( ; ) </td>
+			<td>Used at the end of statements for termination. </td>
+		</tr>
+		<tr>
+			<td>Parenthesis <br>() </td>
+			<td>Are used to indicate function parameters & function calls. </td>
+		</tr>
+		<tr>
+			<td>Asterick <br>( * ) </td>
+			<td>This special symbol is used to create a pointer variable. </td>
+		</tr>
+		<tr>
+			<td>Preprocessor <br>( # ) </td>
+			<td>This must be  attached with the header files. This is automatically 
+				used by the compiler to transform your program before actual 
+				compilation. </td>
+		</tr>
+	</table>
+	</p>
+	<p id = "sideHeading">Operators : </p>
+	<p>
+		<ul>
+			<li>An operator is simply a symbol that is used to perform operations.</li>
+			<li>Operations are performed on varibles.</li>
+		</ul>
+		There are 8 types of operators.
+		<table>
+			<tr>
+				<th><strong>Operator type</strong></th>
+				<th><strong>Description</strong></th>
+			</tr>
+			<tr>
+				<td>Arithmetic Operators<br><center>+, -, *, /, %.</center></td>
+				<td>These are used to perform mathematical calculations like addition, subtraction, multiplication, division and modulus.
+				</td>
+			</tr>
+			<tr>
+				<td>Relational Operators<br><center>&gt, &lt, &gt=, &lt=, ==, !=.</center></td>
+				<td>These operators are used to compare the value of two variables.</td>
+			</tr>
+			<tr>
+				<td>Assignment Operators<br><center>=, +=, -=, *=, /=, %=, &=, ^=.</center></td>
+				<td>These are used to assign the values for the variables in C programs.
+				</td>
+			</tr>
+			<tr>
+				<td>Logical Operators<br><center>&&, ||, !.</center></td>
+				<td>These operators are used to perform logical operations on the given two variables.</td>
+			</tr>
+			<tr>
+				<td>Bit wise Operators<br><center>&, |, ~, ^, &lt&lt, &gt&gt.</center></td>
+				<td>These operators are used to perform bit operations on given two variables.</td>
+			</tr>
+			<tr>
+				<td>Conditional (ternary) Operators<br><center>?:</center></td>
+				<td>Conditional operators return one value if condition is true and returns another value is condition is false.This operator is also called as ternary operator.<br><i>syntax</i> : (Condition)?(true_value):(false_value);</td>
+			</tr>
+			<tr>
+				<td>Increment/decrement Operators<br><center>++, --.</center></td>
+				<td>Increment operators are used to increase the value of the variable by one and decrement operators are used to decrease the value of the variable by one.<br><i>syntax</i> : Increment operator: ++var_name; (or) var_name++; Decrement operator: – -var_name; (or) var_name – -;</td>
+			</tr>
+			<tr>
+				<td>Special Operators<br><center>&, ,(comma), *, sizeof().</center></td>
+				<td>These are used for special operations.</td>
+			</tr>
+		</table><br>
+		The precedence and associativity of C operators are :
+		<table>
+			<tr>
+				<th><strong>Category</strong></th> 
+				<th><strong>Operator</strong></th>
+				<th><strong>Associativity</strong></th>
+			</tr> 
+<tr> <td>Postfix</td><td>() [] -&gt; .  ++   -- </td> <td>Left to right</td> </tr>
+<tr> <td>Unary</td> <td>+  -   !  ~  ++  --   (type)*  &amp;  sizeof()</td> <td>Right to left</td></tr> 
+<tr> <td>Multiplicative </td> <td>*  /  %</td><td>Left to right</td> </tr> 
+<tr> <td>Additive </td><td>+  -</td> <td>Left to right</td> </tr>
+<tr> <td>Shift </td> <td>&lt;&lt; &gt;&gt;</td> <td>Left to right</td> </tr> 
+<tr> <td>Relational </td><td>&lt; &lt;=  &gt; &gt;=</td> <td>Left to right</td> </tr>
+<tr> <td>Equality </td> <td>==  !=</td> <td>Left to right</td> </tr> 
+<tr> <td>Bitwise AND</td><td>&amp;</td> <td>Left to right</td> </tr> 
+<tr> <td>Bitwise XOR</td> <td>^</td> <td>Left to right</td></tr> 
+<tr> <td>Bitwise OR</td> <td>|</td> <td>Left to right</td></tr> 
+<tr> <td>Logical AND</td><td>&amp;&amp;</td> <td>Left to right</td></tr>
+<tr><td>Logical OR</td> <td>||</td> <td>Left to right</td></tr> 
+<tr> <td>Conditional</td><td>?:</td> <td>Right to left</td> </tr>
+<tr><td>Assignment</td> <td>=  +=  -=  *=  /=  %=&gt;&gt;=  &lt;&lt;=  &amp;=  ^=   |=</td><td>Right to left</td></tr>
+<tr> <td>Comma</td> <td>,</td> <td>Left to right</td></tr> 
+</table>
+	</p>
+	<p id = "sideHeading">
+	Expressions : </p>
+	<p>
+		<ul>
+			<li>Operators, functions, constants and variables are combined together to form expressions.</li>
+			<li>Consider a * b + 20. where, *, + are operators, a, b  are variables, 20 is constant and a * b + 20 is an expression.</li>
+			<li>These expressions may be assigned to another variable by assignment operators.</li>
+		</ul>
+	</p>
+	<p id = "sideHeading">
+	Header files : </p>
+	<p>
+		<ul>
+			<li>A header file is a file containing C declarations and macro definitions to be shared between several source files.</li>
+			<li>These can be included in C program by using #include .</li>
+			<li>The extension for header files is .h  .</li>
+		</ul>
+		There are two types of syntaxes
+		<table>
+			<tr>
+				<th><strong>syntax</strong></th>
+				<th><strong>Description</strong></th>
+			</tr>
+			<tr>
+				<td>#include&ltfile&gt</td>
+				<td>This technique searches for your file-name in the standard list of system directories or within the compiler's directory of header files</td>
+			</tr>
+			<tr>
+				<td>#include"file"</td>
+				<td>It is used for user defined header files or other external files for your program. This technique is used to search for the file(s) within the directory that contains the current file. </td>
+			</tr>
+		</table><br>
+		Some of the header files and their usage
+		<table>
+			<tr>
+				<th><strong>Name</strong></th>
+				<th><strong>Description</strong></th>
+			</tr>
+			<tr>
+				<td>stdio.h</td>
+				<td>Input/Output Functions.</td>
+			</tr>
+			<tr>
+				<td>conio.h</td>
+				<td>console input/output.</td>
+			</tr>
+			<tr>
+				<td>ctype.h</td>
+				<td>Character Handling Functions.</td>
+			</tr>
+			<tr>
+				<td>math.h</td>
+				<td>Mathematics Functions.</td>
+			</tr>
+			<tr>
+				<td>stdlib.h</td>
+				<td>General Utility Functions.</td>
+			</tr>
+			<tr>
+				<td>string.h</td>
+				<td>String Functions.</td>
+			</tr>
+			<tr>
+				<td>time.h</td>
+				<td>Date and Time Functions.</td>
+			</tr>
+			<tr>
+				<td>complex.h</td>
+				<td>A set of function for manipulating complex numbers.</td>
+			</tr>
+			<tr>
+				<td>graphics.h</td>
+				<td>For grahics.</td>
+			</tr>
+			<tr>
+				<td>uchar.h</td>
+				<td>Types and functions for manipulating Unicode characters</td>
+			</tr>
+		</table>
+		</p>
+	</body>
+</html>

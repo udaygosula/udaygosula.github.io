@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Gpre'C'</title>
+		<meta name = "viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,"/>
+		<link rel = "stylesheet" type = "text/css" href = "../css/main.css"/>
+		<style>
+			html{
+				height : 100%;
+			}body{
+				height : 90%;
+			}
+		</style>
+	</head>
+  <body>
+	<p style = "text-align : center; color : brown; font-family : Cooper; font-size : 250%;"> UNIT - III</p>
+	<p style = "text-align : center; color : brown; font-family : Cooper; font-size : 150%; padding-top : -10%">Storage Classes</p>
+	<ul>
+		<li>Storage Class specifiers tells the compiler about location to store variable, scope of the variable, default initial value of the variable and life time of the variable.</li>
+	</ul>
+	<ol type = "i">
+		<li><i>Location</i> : It specifies where the variable to be stored either CPU or register.</li>
+		<li><i>Default initial value</i> : It specifies the intital value that is assigned to the variable without explicitily initialized.</li>
+		<li><i>Scope</i> : It specifies the availability of a perticular variable inside or ouside the block or program.</li>
+		<li><i>Lifetime</i> : It specifies how long a variale can exist.</li>
+	</ol>
+	<table>
+	<tr>
+		<th>Storage Classes</th>
+		<th>Location</th>
+		<th>Default Initial Value</th>
+		<th>Scope</th>
+		<th>Life - time</th>
+	</tr>
+	<tr>
+		<td>auto</td>
+		<td>RAM</td>
+		<td>Garbage Value</td>
+		<td>Local</td>
+		<td>Within function or block.</td>
+	</tr>
+	<tr>
+		<td>extern</td>
+		<td>RAM</td>
+		<td>Zero</td>
+		<td>Global</td>
+		<td>Till the end of main program, May be declared anywhere in the program.</td>
+	</tr>
+	<tr>
+		<td>static</td>
+		<td>RAM</td>
+		<td>Zero</td>
+		<td>Local</td>
+		<td>Till the end of main program, retains value between multiple functions call.</td>
+	</tr>
+	<tr>
+		<td>register</td>
+		<td>Register</td>
+		<td>Garbage Value</td>
+		<td>Local</td>
+		<td>Within function.</td>
+	</tr>
+	</table><br>
+	<i>Note</i> : <br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;By default the storage class will be auto.<br>
+  </body>
+</html>

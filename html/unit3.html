@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Gpre'C'</title>
+		<meta name = "viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,"/>
+		<link rel = "stylesheet" type = "text/css" href = "../css/main.css"/>
+		<style>
+			html{
+				height : 100%;
+			}body{
+				height : 90%;
+			}
+		</style>
+	</head>
+	<body>
+	<p style = "text-align : center; color : brown; font-family : Cooper; font-size : 250%;"> UNIT - III</p>
+	<p style = "text-align : center; color : brown; font-family : Cooper; font-size : 150%; padding-top : -10%">Arrays</p>
+		Array is a collection or group of elements belongings to a same data type.
+		<ul>
+			<li>Array can be of any data type.</li>
+			<li>Array size must be a constant value.</li>
+			<li>Contiguous (adjacent) memory locations are used to store array elements in memory.</li>
+		</ul>
+		<strong>Advantages</strong>
+		<ol type = "i">
+			<li>Code is optimized.</li>
+			<li>Retrieving the elements of an array is easy, it makes traversing data simple.</li>
+			<li>Easy to sort data.</li>
+			<li>Access any element randomly using the array.</li>
+		</ol>
+		<strong>Disadvantage</strong>
+		<ol>
+			<li>Size is fixed.</li>
+		</ol>
+		<strong>Types</strong>
+		<ol>
+			<li>One dimensional array</li>
+			<li>Multi dimensional array
+				<ol type = "i">
+					<li>Two dimensional array</li>
+					<li>Three dimensional array</li>
+					<li>Four dimensional array, etc...</li>
+				</ol>
+			</li>
+		</ol>
+		<strong>Note</strong> : <br> 
+		Index of an array starts from <i>0(zero)</i>.<br>
+		Index of last element of an array is <i>size-1</i>.
+		<p id = "sideHeading">One dimensional array : </p>
+		<ul>
+			<li>It is also known as 1-D array</li>
+		</ul>
+		<strong>Example</strong> : <br>
+		10,20,30,40,50 are stored in array is of the form
+		<table>
+			<tr><td>10</td>
+				<td>20</td>
+				<td>30</td>
+				<td>40</td>
+				<td>50</td>
+			</tr>
+		</table><br>
+		<table>
+			<tr>
+				<th><strong> Task </strong></th>
+				<th><strong> Syntax </strong></th>
+				<th><strong> Example </strong></th>
+			</tr>
+			<tr>
+				<td>Declaration</td>
+				<td>data_type array_name [array_size];</td>
+				<td>int marks[6];</td>
+			</tr>
+			<tr>
+				<td>Initialization</td>
+				<td>data_type array_name [arr_size] = {value1, value2, value3, ...};</td>
+				<td>int marks[6] = {98, 97, 99, 96, 98, 100}</td>
+			</tr>
+			<tr>
+				<td>Accessing</td>
+				<td>array_name [index];</td>
+				<td>marks[4];<br>
+				//4th element from start(i.e, 0(zero)) is <i>98</i>
+				</td>
+			</tr>
+		</table>
+		<p id = "sideHeading">Two dimensional array : </p>
+		<ul>
+			<li>It is represented in the form of rows and columns, also known as matrix.</li>
+			<li>It is also known as array of arrays or list of arrays.</li>
+			<li>It is also known as 2-D array</li>
+		</ul>
+		<strong>Example</strong> : <br>
+		10,20,30,40,50,60 are stored in <i>2</i> rows and <i>3</i> column is of the form<br>
+		&nbsp;&nbsp;&nbsp;10&nbsp;&nbsp;&nbsp;20&nbsp;&nbsp;&nbsp;30<br>
+		&nbsp;&nbsp;&nbsp;40&nbsp;&nbsp;&nbsp;50&nbsp;&nbsp;&nbsp;60<br>
+		<table>
+			<tr>
+				<th><strong> Aspect </strong></th>
+				<th><strong> Syntax </strong></th>
+				<th><strong> Example </strong></th>
+			</tr>
+			<tr>
+				<td>Declaration</td>
+				<td>data_type array_names [row_size][column_size];</td>
+				<td>int arr[2][3];</td>
+			</tr>
+			<tr>
+				<td>Initialization</td>
+				<td>data_type array_name [row_size][column_size] = {{value1, value2, value3, ...n}, {valuen+1, valuen+2, ...2*n}, ...};</td>
+				<td>int arr[2][3] = {{1,5,10},{11,15,20}}</td>
+			</tr>
+			<tr>
+				<td>Accessing</td>
+				<td>array_name [row_index][column_index];</td>
+				<td>arr[1][2];<br>
+				//element present in 1st row and 2nd column<i>20</i>
+				</td>
+			</tr>
+		</table><br>
+		<i>Note</i> : For character array refer <i>String</i> in UNIT - I.
+		<p id = "sideHeading">String handling functions : </p>
+		<ul>
+			<li><i>string.h</i> header file supports all string functions.</li>
+		</ul>
+		<table>
+			<tr>
+				<th><strong>Function name</strong></th>
+				<th><strong>Description</strong></th>
+			</tr>
+			<tr>
+				<td>strlen(string_name)</td>
+				<td>Returns the length of string name.</td>
+			</tr>
+			<tr>
+				<td>strcpy(destination, source)</td>
+				<td>Copies the contents of source string to destination string.</td>
+			</tr>
+			<tr>
+				<td>strcat(first_string, second_string)</td>
+				<td>Concats or joins first string with second string. The result is stored in first string.</td>
+			</tr>
+			<tr>
+				<td>strcmp(first_string, second_string)</td>
+				<td>Compares the first string with second string. If both strings are same, it returns 0(zero).</td>
+			</tr>
+			<tr>
+				<td>strrev(string)</td>
+				<td>Returns reverse string.</td>
+			</tr>
+			<tr>
+				<td>strlwr(string)</td>
+				<td>Returns string characters in lowercase.</td>
+			</tr>
+			<tr>
+				<td>strupr(string)</td>
+				<td>Returns string characters in uppercase.</td>
+			</tr>
+		</table>
+		</p>
+	</body>
+</html>

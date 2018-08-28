@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Gpre'C'</title>
+		<meta name = "viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,"/>
+		<link rel = "stylesheet" type = "text/css" href = "../css/main.css"/>
+	</head>
+	<body>
+	<p style = "text-align : center; color : brown; font-family : Cooper; font-size : 250%;"> UNIT - II</p>
+	<p style = "text-align : center; color : brown; font-family : Cooper; font-size : 150%; padding-top : -10%">Input/Output</p>
+	<p>
+		<ul>
+			<li>C provides a collection of library functions that enable the transfer of data between the C program and standard input/output devices.</li>
+			<li>An input/output function can be accessed from anywhere within a program.</li>
+		</ul>
+		The standard input-output devices or the associated files or text streams, are referred as
+		<table>
+			<tr>
+				<th><strong> Type </strong></th>
+				<th><strong> Description </strong></th>
+			</tr>
+			<tr>
+				<td>stdin</td>
+				<td>standard input file, normally connected to the keyboard.</td>
+			</tr>
+			<tr>
+				<td>stdout</td>
+				<td>standard output file, normally connected to the screen/console.</td>
+			</tr>
+			<tr>
+				<td>stderr</td>
+				<td>standard error display device file, normally connected to the screen/console.</td>
+			</tr>
+		</table>
+	<p id = "sideHeading">Classification of Standard I/O functions : </p>
+	<table>
+		<tr>
+			<th>Formatted Functions </th>
+			<th>Unformatted Functions </th>
+		</tr>
+		<tr>
+			<td>1. It read and write all types of data values</td>
+			<td>1. Works only with character data type</td>
+		</tr>
+		<tr>
+			<td>2. Require format string to produce formatted result</td>
+			<td>2. Do not rquire format conversion for formatting data type</td>
+		</tr>
+		<tr>
+			<td>Functions : scanf(), printf()</td>
+			<td>Functions : getchar(), getch(), gets(), putchar(), putch(), puts()</td>
+		</tr>
+	</table>
+	<p id = "sideHeading">scanf() : </p>
+		<ul>
+			<li>scanf() function is used to read character, string, numeric data from stdin.</li>
+			<li>It is present in stdio.h header file.</li>
+		</ul>
+		<strong><i>syntax</i></strong> : <br>
+		scanf("format_string",address_of_variable);<br>
+		<ul>
+			<li>The format string can be %d (integer), %c (character), %s (string), %f (float) etc.</li>
+			<li>Address of variable is retrieved by using symbol '&'.</li>
+		</ul>
+	<strong>Example : </strong><br>
+	&nbsp;&nbsp;&nbsp;&nbsp;int a;<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;scanf("%d",&a);</br>
+	here %d is format specifier of integer data type, the given input is stored in the address of variable a.
+	<p id = "sideHeading">printf() : </p>
+		<ul>
+			<li> printf() function is used to print the “character, string, float, integer, octal and hexadecimal values” onto the output screen.</li>
+			<li>It is present in stdio.h header file.</li>
+		</ul>
+	<strong><i>syntax</i></strong> : <br>
+	printf("message_string",list_of_variable);<br>
+		<ul>
+			<li>message_string contains message, format specifiers and escape sequences.</li>
+			<li>message-string is printed as it on monitor except format specifiers and space sequences.</li>
+			<li>Values of appropriate variable is printed in place of format specifiers.</li>
+			<li>Escape Sequences used to move the cursor in output.</li>
+		</ul>
+		<strong>Example : </strong><br>
+	&nbsp;&nbsp;&nbsp;&nbsp;int a = 23;<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;printf("%d",a);</br>
+	it displays <i>23</i> (the value of a) on stdout(console in general).
+	</p>
+	<p id = "sideHeading">getchar() : </p>
+		<ul>
+			<li>getchar() reads a character from stdin.</li>
+			<li>It returns the unsigned char that was read.</li>
+			<li>If an error or end-of-file is encountered it return EOF.</li>
+		</ul>
+		<strong><i>syntax</i></strong> : <br>
+		char variable = getchar( );<br>
+		<strong>Example : </strong><br>
+	&nbsp;&nbsp;&nbsp;&nbsp;char inp;<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;inp = getchar();</br>
+	it reads a character and store the input into inp.
+	<p id = "sideHeading">putchar() : </p>
+		<ul>
+			<li>putchar() prints character onto stdout(console in general).</li>
+		</ul>
+		<strong><i>syntax</i></strong> : <br>
+		putchar(character_variable);<br>
+		The character_variable refers to previously declared character type variable.<br>
+		<strong>Example : </strong><br>
+	&nbsp;&nbsp;&nbsp;&nbsp;char out = 'A';<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;putchar(out);</br>
+	it prints <i>A</i> onto stdout(console in general).
+	<p id = "sideHeading">gets() : </p>
+		<ul>
+			<li>gets() reads entire string from stdin.</li>
+			<li>It reads entire string with whitespace.</li>
+			<li>If end of line character(\n) is encountered, stops reading input.</li>
+		</ul>
+		<strong><i>syntax</i></strong> : <br>
+		gets(character_variable array);<br>
+		<strong>Example : </strong><br>
+		&nbsp;&nbsp;&nbsp;&nbsp;char inp[100];<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;gets(inp);</br>
+	it reads character sequence and store the input into inp.
+	<p id = "sideHeading">puts() : </p>
+		<ul>
+			<li>puts() prints character sequence onto stdout(console in general).</li>
+			<li>Cursor moves to next line automatically after executing puts().</li>
+		</ul>
+		<strong><i>syntax</i></strong> : <br>
+		puts(character_variable array);<br>
+		<strong>Example : </strong><br>
+		&nbsp;&nbsp;&nbsp;&nbsp;char out[100] = "** GPREC **";<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;puts(out);</br>
+		it prints <i>** GPREC **</i> onto stdout(console in general).
+		</p>
+		<p id = "sideHeading">Type conversion </p>
+		<ul>
+			<li>Modify a variable from one date type to another data type.</li>
+			<li>It is preferable to convert lower data type to higher data type to avoid data loss.</li>
+		</ul>
+		<table>
+			<tr>
+				<th><strong> Type </strong></th>
+				<th><strong> Description </strong></th>
+			</tr>
+			<tr>
+				<td> Implicit </td>
+				<td>Compiler converts from one data type to another wihout any user intervention.<br>It is done in between compatible types.<br>
+				<strong>Example</strong> : <br>
+				int a = 10;<br>
+				double b;<br>
+				b = a;<br><br>
+				Here data type of <i>a</i> is converted from int to double.<br>
+				</td>
+			</tr>
+			<tr>
+				<td> Explicit </td>
+				<td>User converts from one data type to another.<br>
+				<strong>Example</strong> : <br>
+				double a = 20.2;<br>
+				int b = 10, sum = 0;<br>
+				sum = (int)a + b;<br>
+				printf("The sum : %d",sum);<br><br>
+				Here the data type of <i>a</i> is converted from double to int.<br> The output will be<br><i>The sum : 30</i>.
+				</td>
+			</tr>
+		</table>
+		<p style = "text-align : center; color : brown; font-family : Cooper; font-size : 150%; padding-top : -10%">Flow Control</p>
+		<p>
+			<ul>
+			<li>Control statements enable to specify the flow of program control.</li>
+			<li>This makes the sequential flow of the program altered.</li>
+			</ul>
+			There are four types of control statements
+			<table>
+				<tr>
+					<th><strong> Type </strong></th>
+					<th><strong> Description </strong></th>
+				</tr>
+				<tr>
+					<td>Descision making statements</td>
+					<td>These are condition based statements.Executes some set of statements based on some condition.<br>
+					<i>if</i>, <i>if-else</i>, <i>else-if ladder</i>, <i>nested if</i>.</td>
+				</tr>
+				<tr>
+					<td>Selection statement</td>
+					<td>It is used for multiple way selections that will branch into different parts of code based on the value of a variable or expression. This expression or variable must be of integer data type.<br>
+					<i>switch-case</i>.
+					</td>
+				</tr>
+				<tr>
+					<td>Iteration statements</td>
+					<td>These are a set of repetitive statements based on some condition. These statements are repeated for a number of times until the condition goes false.These are also called as repetitive statement.<br>
+					<i>while</i>, <i>do-while</i>, <i>for</i>.
+					</td>
+				</tr>
+				<tr>
+					<td>Jump statements</td>
+					<td>These statements provides unconditional way to transfer control from one part of program to other.<br>
+					<i>break</i>, <i>continue</i>, <i>goto</i>.
+					</td>
+				</tr>
+			</table>
+			<br>
+			<p id = "sideHeading">Descision making statements</p>
+			<table>
+				<tr>
+					<th><strong> name </strong></th>
+					<th><strong> syntax with example </strong></th>
+				</tr>
+					<tr>
+						<td>if</td>
+						<td>if(condition)<br>
+						{ <br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;statements;<br>
+						//executes if condition is true<br>
+						}<br>
+						<strong>Example</strong> : <br>
+						int a = 10, b = 20;<br>
+						if(a &lt b)<br>
+						{<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("%d is smaller than %d",a,b);<br>
+						}<br>
+						<strong>Explanation</strong> : <br>
+						as a(10) is less than b(20) it prints <i>10 is smaller than 20</i>.
+						</td>
+					</tr>
+					<tr>
+						<td>if-else</td>
+						<td>if(condition)<br>
+						{<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;statements;<br>
+						// executes if condition is true<br>
+						}<br>
+						else<br>
+						{<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;statements;<br>
+						// executes if condition is false<br>
+						}<br>
+						<strong>Example</strong> : <br>
+						int a = 10, b = 20;<br>
+						if(a &gt b)<br>
+						{<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("%d is bigger than %d",a,b);<br>
+						}<br>
+						else<br>
+						{<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("%d is smaller than %d",a,b);<br>
+						}<br>
+						<strong>Explanation</strong> : <br>
+						as a(10) is less than b(20), condition false it skips the if block(if{ }) and execute else block(else{ }). It prints <i>10 is smaller than 20</i>.
+						</td>
+					</tr>
+					<tr>
+						<td>else-if ladder</td>
+						<td> if(condition1)<br>
+							{<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;statements;<br>
+							//executes if condition1 is true<br> 
+							}<br>
+							else if(condition2)<br>
+							{<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;statements;<br>
+							//executes if condition2 is true<br>
+							}<br>
+							else if(condition3)<br>
+							{<br>  
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;statements;<br>
+							//executes if condition3 is true<br>
+							}<br>  
+							...<br>  
+							else<br>
+							{<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;statements;<br>
+							//executes if all the conditions are false<br>  
+							}<br>
+							<strong>Example</strong> : <br>
+							int a = 10, b = 20;<br>
+							if(a &gt b)<br>
+							{<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("%d is bigger than %d",a,b);<br>
+							}<br>
+							else if(a == b)<br>
+							{<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("%d is equal to %d",a,b);<br>
+							}<br>
+							else<br>
+							{<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("%d is smaller than %d",a,b);<br>
+							}<br>
+							<strong>Explanation</strong> : <br>
+							as a(10) is less than b(20), condition false it skips the if block(if{ }) and checks condition of if-else block(else if{ }). Since the condition if-else block(else if{ }) also false it skips and checks for another if-elseblock(else if{ }). It prints <i>10 is smaller than 20</i> because there is no if-elseblock(else if{ }) to be checked.
+							</td>
+					</tr>
+					<tr>
+						<td>nested-if</td>
+						<td>if(condition1)<br>
+						{<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;statements;<br>
+						//executes if condition1 is true else exit form if.<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(condition2)
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;statements;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//executes if condition2 is true else exit form if.<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(condition3)<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;statements;<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//executes if condition3 is true else exit form if.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+						}<br>
+						<strong>Example</strong> : <br>
+						int a = 10, b = 20;<br>
+						if(a !&gt b)<br>
+						{<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("1, ");<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(a != b)<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("2, ");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(a &lt b)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("%d is smaller than %d",a,b);<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+						}<br>
+						<strong>Explanation</strong> : <br>
+						as a(10) is not greater than b(20) it prints  <i>1, </i>and enters into if block(if{ }), checks condition2 of if block(if{ }). Since a(10) is not equal to b(20) prints  <i>2, </i>and enters into if block(if{ })It prints <i>10 is smaller than 20</i> because the condition a(10) is less than b(20) is true. Finally the output will be<br> <i>1, 2, 10 is smaller than 20</i>.</td>
+					</tr>
+			</table>
+			<p id = "sideHeading">Selection statement</p>
+			<strong><i>switch</i></strong><br>
+			<strong>syntax</strong> : <br>
+			switch(expression/variable)<br>
+			{<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case  value1:<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;statements;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//executes if expression/variable matches with value1.<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;  //it is optional, if specified then exits from block.<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case  value2:<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;statements;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//executes if expression/variable matches with value2.<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;   //it is optional, if specified then exits from block.<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default:  //it is optional, if specified then executes statements when expression/variable doesn't matche with one of the case values as mentioned in switch.<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;statements;<br>
+			}<br>
+			<strong>Rules for apply switch</strong> : 
+			<ol type = "i">
+				<li>Use only byte, short, int, char data type.</li>
+				<li>Use any number of case statements within a switch.</li>
+				<li>Logical operators cannot be used with switch statement.</li>
+			</ol>
+			<strong>Example</strong> : <br>
+			int a = 10;<br>
+			switch(a){<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case 5 : <br> 
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Value of a is 5");break;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case 10 : <br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Value of a is 10");break;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case 15 : <br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Value of a is 15");break;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default : <br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Value of a is none of the above");<br>
+			}<br>
+			<strong>Explanation</strong> : <br>
+			as we are passing variable a(10) into switch, it checks with each case values(5, 10) until case value matches with given variable(a). It executes the statements of case value 10 until break; or end of switch( } ) is encountered. It prints <i>Value of a is 10</i>.
+		</p>
+		<p id = "sideHeading">Iteration statements</p>
+		<table>
+			<tr>
+				<th><strong>name</strong></th>
+				<th><strong>syntax with example</strong></th>
+			</tr>
+			<tr>
+				<td>while</td>
+				<td>
+				while(condition)//checks the condition<br>
+				{<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;statements;<br>
+				//statements executes till the condition goes false
+				}<br>
+				<strong>Example</strong> : <br>
+				int i = 0;<br>
+				while(i &lt 5)<br>
+				{<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Value of i : %d\n",i);<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i++;<br>
+				}<br>
+				<strong>Explanation</strong> : <br>
+				i is initialized to 0, checks the condition as i(0) less than 5, as it is true enters the loop,execute the statement and it prints <i> Value of i : 0</i> then increments value of i by 1 and checks the condition again i(1) less than 5 as it is true enters the loop,execute the statement and it prints <i> Value of i : 1</i> then increments value of i by 1 and checks the condition again i(2) less than 5 and so on until the value of i is not less than 5.<br>The output will be<br>
+				<i>Value of i : 0<br>Value of i : 1<br>Value of i : 2<br>Value of i : 3<br>Value of i : 4</i>
+				</td>
+			</tr>
+			<tr>
+				<td>do-while</td>
+				<td>
+				do<br>
+				{<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;statements;<br>
+				//statements executes till the condition goes false
+				}<br>
+				while(condition)//checks the condition<br>
+				<strong>Example</strong> : <br>
+				int i = 0;<br>
+				do<br>
+				{<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Value of i : %d\n",i);<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i++;<br>
+				}while(i &lt 5)<br>
+				<strong>Explanation</strong> : <br>
+				i is initialized to 0, enters the loop,execute the statement and it prints <i> Value of i : 0</i> then increments value of i by 1 and checks the condition i(1) less than 5 as it is true enters the loop,execute the statement and it prints <i> Value of i : 1</i> then increments value of i by 1 and checks the condition again i(2) less than 5 and so on until the value of i is not less than 5.<br>The output will be<br>
+				<i>Value of i : 0<br>Value of i : 1<br>Value of i : 2<br>Value of i : 3<br>Value of i : 4<br>Value of i : 5</i>
+				</td>
+			</tr>
+			<tr>
+				<td>for</td>
+				<td>for(initialization;condition;incr/decr)<br>
+				{<br> 
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;statements<br>
+				//statements executes till the condition goes false<br>
+				}<br> 
+				<strong>Example</strong> : <br>
+				int i;<br>
+				for(i = 0;i &lt 5;i++)<br>
+				{<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Value of i : %d\n",i);<br>
+				}<br>
+				<strong>Explanation</strong> : <br>
+				i is initialized to 0, checks the condition as i(0) less than 5, as it is true enters the loop,execute the statement and it prints <i> Value of i : 0</i> then increments value of i by 1 and checks the condition again i(1) less than 5 as it is true enters the loop,execute the statement and it prints <i> Value of i : 1</i> then increments value of i by 1 and checks the condition again i(2) less than 5 and so on until the value of i is not less than 5.<br>The output will be<br>
+				<i>Value of i : 0<br>Value of i : 1<br>Value of i : 2<br>Value of i : 3<br>Value of i : 4</i>
+				</td>
+			</tr>
+		</table><br>
+		<p id = "sideHeading">Jump statements</p>
+		<table>
+			<tr>
+				<th> name </th>
+				<th> syntax with description </th>
+			</tr>
+			<tr>
+				<td>break</td>
+				<td><i>break;</i><br>
+				<strong>Description</strong> : <br>
+				Used to terminate the execution of loops (while, do-while and for) and switch case.<br>
+				<strong>Example</strong> : <br>
+				int i;<br>
+				for(i = 0;i &lt 5;i++)<br>
+				{<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(i == 2){<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+				printf("Value of i : ",i);<br>
+				}<br>
+				<strong>Explanation</strong> : <br>
+				for executes perfectly till the value of i equals 2. When the value of i equals 2 it enters into the if block(if{ }) executes break; as break is encountered it exits the loop even though condition of for loop is true.<br>The output will be<br>
+				<i>Value of i : 0<br>Value of i : 1</i>
+				</td>
+			</tr>
+			<tr>
+				<td>continue</td>
+				<td><i>continue;</i><br>
+				<strong>Description</strong> : <br>
+				Used to skip the execution of loops (while, do-while and for) for one iteration.<br>
+				<strong>Example</strong> : <br>
+				int i;<br>
+				for(i = 0;i &lt 5;i++)<br>
+				{<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(i == 2){<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+				printf("Value of i : ",i);<br>
+				}<br>
+				<strong>Explanation</strong> : <br>
+				for executes perfectly till the value of i equals 2. When the value of i equals 2 it enters into the if block(if{ }) executes continue; as continue is encountered it skips one iteration the loop even though condition of for loop is true and executes remainging statements till condition of for loop goes false.<br>The output will be<br>
+				<i>Value of i : 0<br>Value of i : 1<br>Value of i : 3<br>Value of i : 4</i>
+				</td>
+			</tr>
+			<tr>
+				<td>goto</td>
+				<td><i>{<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;goto label;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;label:<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;statements<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</i><br>
+				<strong>Description</strong> : <br>
+				Used to transfer the sequential flow of a program to the specified label in the program.<br>
+				<strong>Example</strong> : <br>
+				int a = 2, b = 3, c = 0;<br>
+				printf("Value of a : %d",a);<br>
+				printf("Value of b : %d",b);<br>
+				if(c == 0){<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;goto ADD;<br>
+				}<br>
+				c = a+b;<br>
+				printf("Value of c : %d",c);<br>
+				ADD :<br> 
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Value of c : %d",c);<br>
+				<strong>Explanation</strong> : <br>
+				Program executes sequentially till if condition, it checks the if condition as it is true executes goto and change the flow of the program to label ADD : executes the print statement and prints <i>Value of c : 0</i>and then goes back to if block(if{ }) as there are no statements in if block(if{ }) and executes c = a+b and prints <i>Value of c : 5</i><br>The output will be<br>
+				<i>Value of a : 2<br>Value of b : 3<br>Value of c : 0<br>Value of c : 5</i>
+				</td>
+			</tr>
+		</table>
+		</p>
+	</body>
+</html>

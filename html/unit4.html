@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Gpre'C'</title>
+		<meta name = "viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,"/>
+		<link rel = "stylesheet" type = "text/css" href = "../css/main.css"/>
+		<style>
+			html{
+				height : 100%;
+			}body{
+				height : 90%;
+			}
+		</style>
+	</head>
+	<body>
+	<p style = "text-align : center; color : brown; font-family : Cooper; font-size : 250%;"> UNIT - III</p>
+	<p style = "text-align : center; color : brown; font-family : Cooper; font-size : 150%; padding-top : -10%">Function</p>
+	<ul>
+		<li>Function is a block of code that performs a particular task.</li>
+	</ul>
+	<strong>Advantages</strong> : <br>
+	<ol type = "i">
+		<li>Code reusability</li>
+		<li>Code optimization</li>
+	</ol>
+	Types of functions
+	<table>
+		<tr>
+			<th><strong> Type </strong></th>
+			<th><strong> Description </strong></th>
+		</tr>
+		<tr>
+			<td>Library functions</td>
+			<td>They are inbuilt functions present in header files.<br>
+			<strong>Examples</strong> : scanf(), printf(), gets(),  puts(), ceil(), floor(), etc.
+			</td>
+		</tr>
+		<tr>
+			<td>User-defined functions</td>
+			<td>They are created by the programmer.
+			</td>
+		</tr>
+	</table><br>
+	<p id = "sideHeading">User Defined Functions : </p>
+	<ul>
+		<li>These are the functions that are created by the programmer. </li>
+	</ul>
+	There are 3 aspects included in function execution.
+	<table>
+		<tr>
+			<th><strong>aspect</strong></th>
+			<th><strong>syntax</strong></th>
+		</tr>
+		<tr>
+			<td>function declaration</td>
+			<td>return_type function_name (data type parameter1, data type parameter2, ...);<br>
+			<strong>Description</strong> : <br>
+			This informs compiler about the function name, function parameters and  return value's data type.
+			</td>
+		</tr>
+		<tr>
+			<td>function call</td>
+			<td>function_name (data_type parameter1, data_type parameter2, ...);<br>
+			<strong>Description</strong> : <br>
+			This calls the actual function.
+			</td>
+		</tr>
+		<tr>
+			<td>function definition</td>
+			<td>return_type function_name (data_type parameter1, data_type parameter2,...)<br>
+			{<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;statements;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return value<br>
+			}<br>
+			<strong>Description</strong> : <br>
+			This is the body of function and contains all the statements to be executed.
+			</td>
+		</tr>
+	</table><br>
+	<strong>Types of parameters</strong>
+		<ol type = "i">
+			<li><i>Actual parameters</i> : These are the arguments that are used in function call.</li>
+			<li><i>Formal parameter</i> : These are thearguments that are used in function defination.</li>
+		</ol>
+	<strong>Calling a function</strong> : <br>
+	There are two ways that function can be called from a program.
+	<ol type = "i">
+		<li><i>Call by value</i> : 
+			<ul>
+				<li>The value of actual parameter is copied to formal parameter. </li>
+				<li>Different memory is allocated for both actual and formal parameters and hence the value of the actual parameter can not be modified by formal parameter.</li>
+			</ul>
+		</li>
+		<li><i>Call by reference</i> : 
+			<ul>
+				<li>The address of the variable is passed to the function as parameter.</li>
+				<li>Same memory is used for both actual and formal parameters and hence the value of the actual parameter can be modified by formal parameter.</li>
+			<ul>
+		</li>
+	</ol>
+	<strong>Types of functions</strong> : 
+	<ul>
+		<li>Based on arguments and return values, user defined functions are classified into 4 types.</li><br>
+	</ul>
+	<table>
+		<tr>
+			<th><strong>Type</strong></th>
+			<th><strong>Syntax</strong></th>
+			<th><strong>Example</strong></th>
+		</tr>
+		<tr>
+			<td>Function with no arguments and no return value</td>
+			<td>
+			void function_name ()<br>
+			{<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;statements;<br><br>
+			}<br>
+			<strong>Description</strong> : <br>
+			Here, the return type must be void and there must be no return value.
+			</td>
+			<td>
+			void add(){<br> 
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int a = 10, b = 20, c = 0;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c = a+b;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("The sum : %d",c);<br>
+			}<br>
+			<strong>Explanation</strong> : <br>
+			This function add() prints<br> <i>The sum : 30</i>.
+			</td>
+		</tr>
+		<tr>
+			<td>Function with no arguments and a return value</td>
+			<td>
+			void function_name ()<br>
+			{<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;statements;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return value;<br>
+			}<br>
+			<strong>Description</strong> : <br>
+			Here, the return type must not be void and there must be return value based on return type.
+			</td>
+			</td>
+			<td>
+			int add(){<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int a = 10, b = 20;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int c = a+b;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return c;<br>
+			}<br>
+			<strong>Explanation</strong> : <br>
+			This function add() returns the value <i>30</i> to main(). 
+			</td>
+		</tr>
+		<tr>
+			<td>Function with arguments and no return value</td>
+			<td>
+			void function_name (data_type parameter1, data_type parameter2,...)<br>
+			{<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;statements;<br>
+			}<br>
+			<strong>Description</strong> : <br>
+			Here, the return_type must be void and there must be argument list. This type of functions doesn't return any value. 
+			</td>
+			<td>
+			void add(int val1,int val2){<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int a = val1, b = val2, c =0;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c = a+b;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("The sum : %d",c);<br>
+			}<br>
+			<strong>Explanation</strong> : <br>
+			This function add() takes the arguments, add them and executes printf() statement. If the values of val1 is <i>10</i> and val2 is <i>20</i> then the function prints <br><i>The sum : 30</i>.
+			</td>
+		</tr>
+		<tr>
+			<td>Function with arguments and a return value</td>
+			<td>return_type function_name (data_type parameter1, data_type parameter2,...)<br>
+			{<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;statements;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return value<br>
+			}<br>
+			<strong>Description</strong> : <br>
+			Here, the return_type must not be a void and there must be argument list. This type of functions must return the value to the function call.
+			</td>
+			<td>
+			void add(int val1,int val2){<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int a = val1, b = val2, c =0;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c = a+b;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return c;<br>
+			}<br>
+			<strong>Explanation</strong> : <br>
+			This function add() takes the arguments, add them and returns the value of <i>c</i> to the place where function is called in main(). If the values of val1 is <i>10</i> and val2 is <i>20</i> then the function returns <i>30</i> to main().
+			</td>
+		</tr>
+	</table><br>
+	<p id = "sideHeading">Recursion : </p>
+	<ul>
+		<li>Function is called within the same function, is known as recursion. </li>
+		<li>That function is known as recursive function. </li>
+	</ul>
+	<strong>syntax</strong> : <br>
+	return_type function_name (data_type parameter1, data_type parameter2,...)<br>
+			{<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;statements;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function_name (data_type parameter1, data_type parameter2,...);<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;statements;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return value<br>
+			}<br>
+	<strong>Example</strong> : <br>
+	int factorial (int n)<br>    
+	{ <br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if ( n &lt 0)  <br>  
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return -1; /*Wrong input*/  <br>  
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (n == 1) {   <br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 1; /*Terminating condition*/ <br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else {<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return (n * factorial (n -1)); <br>   
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br>
+	}  <br>
+	<p id = "sideHeading">Passing array to function : </p>
+	<ul>
+		<li>We can pass array as an argument to function.</li>
+	</ul>
+	There are 2 formats to pass an array as an argument.
+	<ol type = "i">
+		<li><i>Format 1</i> : Specifing '[' and ']' braces, mentionng siz can be optional.<br>
+		<strong>syntax</strong> : <br>
+		return_type function_name (data_type array_name[]);<br>
+		<strong>Example</strong> : <br>
+		int a[20];<br>
+		int disp(a[]);<br>
+		</li>
+		<li><i>Format 2</i> : Using pointer as parameter.<br>
+		<strong>syntax</strong> : <br>
+		return_type function_name (data_type *array_name);<br>
+		<strong>Example</strong> : <br>
+		int a[20];<br>
+		int disp(*a);<br>
+		</li>
+	</ol>
+	</body>
+</html>

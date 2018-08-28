@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Gpre'C'</title>
+		<meta name = "viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,"/>
+		<link rel = "stylesheet" type = "text/css" href = "../css/main.css"/>
+		<style>
+			html{
+				height : 100%;
+			}body{
+				height : 90%;
+			}
+		</style>
+	</head>
+  <body>
+	<p style = "text-align : center; color : brown; font-family : Cooper; font-size : 250%;"> UNIT - V</p>
+	<p style = "text-align : center; color : brown; font-family : Cooper; font-size : 150%; padding-top : -10%">Structures and Unions</p>
+	<p id = "sideHeading">Structures : </p>
+	<ul>
+		<li>Structure in c language is a user defined datatype that allows you to hold different type of elements.</li>
+	</ul>
+	<strong>Note</strong> : <br>
+	<ul>
+		<li>If you want to access structure members, structure variable should be declared.</li>
+		<li>Many structure variables can be declared for same structure and memory will be allocated for each separately.</li>
+	</ul>
+	<table>
+	<tr>
+		<th><strong>Using normal variable</strong></th>
+		<th><strong>Using pointer variable</strong></th>
+	</tr>
+	<tr>
+		<td><i>Syntax:</i><br>
+		struct tag_name<br>
+		{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;data_type var_name1;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;data_type var_name2;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;data_type var_name3;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;};</td>
+		<td><i>Syntax:</i><br>
+		struct name<br>
+		{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;data type var_name1;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;data type var_name2;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;data type var_name3;<br>
+		};</td>
+	</tr>
+	<tr>
+	<td><i>Example:</i><br>
+	struct student<br>
+	{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int &nbsp;mark;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;char name[10];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;float average;<br>
+		};</td>
+		<td><i>Example:</i><br>
+		struct&nbsp;student<br>
+		{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int mark;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;char name[10];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;float average;<br>
+		};</td>
+	</tr>
+	<tr>
+		<td><i>Declaring structure using normal variable:</i><br>
+		struct student report;</td>
+		<td><i>Declaring structure using pointer variable:</i><br>
+		struct student *report, rep;</td>
+	</tr>
+	<tr>
+	<td><i>Initializing structure using normal variable:</i><br>
+	struct student report = {100, “Qwerty”, 99.5};</td>
+	<td><i>Initializing structure using pointer variable:</i><br>
+	struct student rep = {100, “Qwerty”, 99.5};<br>
+	report = &amp;rep;</td>
+	</tr>
+	<tr>
+		<td><i>Accessing structure members using normal variable:</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;report.mark;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;report.name;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;report.average;</td>
+		<td><i>Accessing structure&nbsp;members using pointer variable:</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;report &nbsp;-&gt; mark;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;report -&gt; name;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;report -&gt; average;</td>
+	</tr>
+	</table><br>
+	<strong>Passing structure to function</strong> : <br>
+	<ul>
+		<li>A structure can be passed to any function.</li>
+	</ul>
+	<i>Examle</i> : <br>
+	#include&lt;stdio.h&gt;<br>
+	#include&lt;string.h&gt;<br>
+	struct student <br>
+	{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int id;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;char name[20];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;float percentage;<br>
+	}; <br>
+	void func(struct student record);<br>
+	int main() <br>
+	{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;struct student record;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record.id=1;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;strcpy(record.name, "Qwerty");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record.percentage = 86.5;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;func(record);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>
+	}<br>
+	void func(struct student record)<br>
+	{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;printf(" Id is: %d \n", record.id);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;printf(" Name is: %s \n", record.name);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;printf(" Percentage is: %f \n", record.percentage);<br>
+	}<br>
+	<i>Output</i> : <br>
+	Id is: <i>1</i><br>
+	Name is: <i>Qwerty</i><br>
+	Percentage is: <i>86.500000</i><br><br>
+	<strong>Self referential structures</strong>
+	<ul>
+		<li>Structures that have one or more pointers which point to the same type of structure, as their member are self referential structures.</li>
+	</ul>
+	<i>Example</i> : <br>
+&nbsp;&nbsp;&nbsp;&nbsp;struct node{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int data;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;struct node *next;<br> 
+&nbsp;&nbsp;&nbsp;&nbsp;<i>/* self-referential */</i><br>
+    };<br>
+	<p id = "sideHeading">Union : </p>
+	<ol>
+		<li>Union in is a user defined datatype that is used to hold different type of elements.</li>
+		<li>But it doesn't occupy sum of all members size. It occupies the memory of largest member only.</li>
+		<li>It shares memory of largest member.</li>
+	</ol>
+	<strong>syntax</strong> : <br>
+	<ol>
+		<li>union keyword is used to define union.</li>
+	</ol>
+	union union_name <br>  
+    {  <br>
+&nbsp;&nbsp;&nbsp;&nbsp;data_type member1;  <br>
+&nbsp;&nbsp;&nbsp;&nbsp;data_type member2;  <br>
+&nbsp;&nbsp;&nbsp;&nbsp;data_type memeberN;  <br>
+    };  <br>
+	<strong>example</strong> : <br>
+	union employee  <br>
+    {   <br>
+&nbsp;&nbsp;&nbsp;&nbsp;char name[50];  <br>
+&nbsp;&nbsp;&nbsp;&nbsp;float salary;  <br>
+    };  <br><br>
+	<p id = "sideHeading">Typedef : </p>
+	<ul>
+		<li>It is a keyword that allows us to create an alias or new name for an existing type or user defined type.</li>
+	</ul>
+	<strong>syntax</strong> : <br>
+&nbsp;&nbsp;&nbsp;&nbsp;typedef data_type new_name;
+	<ul>
+		<li><i>typedef</i> : keyword.</li>
+		<li><i>data_type</i> : existing type or user defined type.</li>
+		<li><i>new_name</i> : alias or new name to any existing type or user defined type.</li>
+	</ul>
+	<strong>example</strong> : <br>
+&nbsp;&nbsp;&nbsp;&nbsp;typedef int myint;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;myint i = 0;<br><br>
+  </body>
+ </html>

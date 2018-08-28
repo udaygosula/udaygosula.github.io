@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Gpre'C'</title>
+		<meta name = "viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,"/>
+		<link rel = "stylesheet" type = "text/css" href = "../css/main.css"/>
+	</head>
+	<body bgcolor = "black" align = "left" >
+		<div style = "background-color : black; color : white; font-family : Maiandra GD;font-size : 150%;">
+			<p>
+			(1) Two variables a and b contain values 10 and 20. Write a
+program to interchange the contents of a and b without using
+a third variable.<br><br>
+#include&lt;stdio.h&gt;;<br>
+int main()<br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int a = 10, b = 20;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;printf ("Before interchanging : ");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;printf("a = %d b = %d",a,b);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;a = a+ b;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;b = a-b;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;a = a-b;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;printf ("\nAfter interchanging : ");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;printf ("a = %d b = %d", a, b) ;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>
+}
+<br><br><br>
+	(2) Write a program to print a statement given form user without using ';' <i>(semicolon)</i>.<br><br>
+	#include&lt;stdio.h&gt;<br>
+	#include&lt;string.h&gt;<br>
+	int main()<br>
+	{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;char a[30];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;gets(a);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if(puts(a)){ }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<i>/*<br>
+&nbsp;&nbsp;&nbsp;&nbsp;You can try this even<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>if(printf("%s",a)){ }</strong><br>
+&nbsp;&nbsp;&nbsp;&nbsp;*/</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>
+	}<br><br><br>
+	(3) Write a program which finds a four digit number AABB which
+is a perfect square. A and B represent different digits.<br><br>
+
+#include&lt;;stdio.h&gt;;<br>
+#include&lt;;math.h&gt;;<br>
+int main()<br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int a, i, d1, d2, d3, d4, num;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;for ( i = 1100 ;i&lt;=9988;i++)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;num = i;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d4 = num % 10;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;num = num/10;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d3 = num% 10;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;num = num/10;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d2 = num % 10;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;num = num/10;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dl =num% 10;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(d1 == d2&amp;&amp;d3 == d4&amp;&amp;d1 !=d3)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a = sqrt(i); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (i == a*a)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf ("Desired number = %d\n", i ) ;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>
+}<br><br><br>
+	(4)  Predict the output of sudo code<br>
+	{
+&nbsp;&nbsp;&nbsp;&nbsp;float I = 1.1;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;float U = 1.1;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if(I == 1.1 || U == 1.1)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("/'I/' have a chance to be with /'U/' :-) ");
+&nbsp;&nbsp;&nbsp;&nbsp;else
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Left alone :-( ");
+	}<br>
+	<strong>Output</strong> : <br>
+&nbsp;&nbsp;&nbsp;&nbsp;Left alone :-( <br>
+	<strong>Explanation</strong> : <br>
+&nbsp;&nbsp;&nbsp;&nbsp;Since 1.1 is of double type by default. To represent float append <i>f</i> to the value ( <i>1.1f</i> ).<br><br><br>
+	(5) Write a program that, for all positive integers i, j , k, and l from
+1 through 1000, finds and prints all combinations of i, j , k, and
+l such that i + j + k = 1 and i &lt; j &lt; k &lt; l.<br><br>
+
+#include&lt;stdio.h&gt;<br>
+int main()<br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int i, j, k, I;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;for(1 = 1; l &lt; = 1000; l++)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (k = 1; k &lt; l; k++ )<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (j = 1; j &lt; k; j++)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (i = 1; i &lt; j; i++)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if((i + j + k ) == l)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf ("\n%d + %d + %d = %d", i, j, k, l ) ;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>
+}<br><br><br>
+
+
+	(6) A positive integer is entered through the keyboard. Alongwith
+it the base of the numbering system in which you want to
+convert this number is entered. Write a program to display the
+number entered, the base, and the converted number.
+For example, if the input is 64 2 then the output should be 64
+2 1000000. Similarly, if the input is 64 16, then the output
+should be 64 16 40.<br><br>	
+
+#include&lt;stdio.h&gt;<br>
+int main()<br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;unsigned int num, num2, no_dig = 0, p, base;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int i;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;printf ("\nEnter any positive integer &amp; base");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;scant ("%d %d", &amp;num, &amp;base);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;printf ("\n%d%d",&amp;num, &amp;base);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;num2 = num;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;do<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;no_dig++;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;num2 = num2 / base;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;} while (num2 != 0 ) ;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;for( ;no_dig &gt; 0 ;no_dig--, num %=p)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p = i ;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (i = no_dig - 1 ; i&gt;0 ; i--)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p = p*base;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(base == 16)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf ("%X", num/p ) ;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf ("%d", num/p ) ;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>
+}<br><br><br>
+	
+	(7) For every non-zero odd number there exist two consecutive
+numbers which form a pythagorian triplet. For example, 3, 4,
+5 form a pythagorian triplet where 3 is an odd number, whereas
+4 and 5 are consecutive numbers. Another example is 9, 40,
+41. Write a program to find all such pythagorian triplets for all
+odd numbers in the range 1 to 10.<br><br>
+
+#include&lt;stdio.h&gt;<br>
+int main()<br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;unsigned int i, j, k;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;for(i = 1 ; i &lt;= 9 ; i = i + 2 )<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(j = 1;j&lt;=9;j++)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;k = j+1;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(i*i + j*j == k*k)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf ("\n%u%u%u", i , j , k ) ;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>
+}<br><br><br>
+
+
+	(8) Square of 12 is 144. 21, which is a reverse of 12 has a square
+441, which is same as 144 reversed. There are few numbers
+which have this property. Write a program to find out whether any more such numbers exist in the range 10 to 100.<br><br>	
+
+#include&lt;stdio.h&gt;<br>
+int main()<br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;unsigned long num, rnum, square, rsquare, n2, num2;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int d1,d2,d3,d4,d5;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;for(num = 10; num &lt;= 100; num++)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;num2 = num;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d1 = num2%10;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;num2 = num2/10;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d2 = num2%10;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;num2 = num2/10;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d3 = num2%10;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;num2 = num2/10;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d4 = num2% 10;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;num2 = num2/10;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d5 = num2;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rnum = d5 + d4*10 + d3*100 + d2*1000L + d1*10000L;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while(rnum%10 == 0)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rnum = rnum/10;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;square = num * num;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rsquare = rnum * rnum;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d1 = square % 10;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;square = square/10;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d2 = square%10;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;square = square/10;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d3 = square%10;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;square = square/10;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d4 = square%10;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;square = square/10;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d5 = square;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;n2 = d5 + d4*10 + d3*100 + d2*1000L + d1*10000L;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while(n2%10 == 0)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;n2 = n2/10 ;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (rsquare == n2)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf ("\n%lu", num);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>
+}<br><br><br>
+
+								
+	(9) A square matrix, that is, one having the same number of rows
+and columns, is called a diagonal matrix if its only non-zero
+elements are on the diagonal from upper left to lower right. It
+is called upper triangular, if all elements below the diagonal
+are zeroes, and lower triangular, if all elements above the
+diagonal are zeroes. Write a program that reads a matrix and
+determines if it is one of these three special matrices.<br><br>
+
+#include&lt;stdio.h&gt;<br>
+int main()<br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int mat[10][10], n, r, c, lowertri = 0, uppertri = 0 ;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;printf ("\nEnter no. of rows of matrix (1 to 1 0 ) " ) ;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;scanf("%d",&amp;n) ;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;printf("Enter elements of matrix\n");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;for(r = 0; r &lt; n; r++)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for( c = 0 ; c &lt; n; c++)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scanf("%d",&amp;mat[r][c]);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<i>/* check for lower triangular matrix */</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;for (r = 0; r &lt; n-1; r++)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(c = r+1;c&lt;n;C++)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(mat[r][c])<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(mat[r][c])<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if(r == n-1 )<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lowertri = 1 ;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<i>/* check for upper triangular matrix */</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;for(r = 1; r&lt;n; r++)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(c = 0 ; c &lt; r; c++)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(mat[r][c])<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(mat[r][c])<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if(r == n)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;uppertri = 1;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if(lowertri &amp;&amp; uppertri)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf ("\nDiagonal Matrix");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;else<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(lowertri)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("\nlower Triangular Matrix");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(uppertri)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf ("\nUpper Triangular Matrix");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf ("Wot a special type of matrix")<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>
+}<br><br><br>
+	
+		
+	(10) Write a program to print those strings which are palindromes from a set of strings stored in the following array of pointers to strings.<br>
+static char*s[] ={<br>
+	&nbsp;&nbsp;"MalayalaM",<br>
+	&nbsp;&nbsp;"To really mess things up...",<br>
+	&nbsp;&nbsp;"One needs to know CH"<br>
+	&nbsp;&nbsp;"able was I ere I saw elba"<br>
+	&nbsp;&nbsp;};<br><br>
+	
+#include&lt;stdio.h&gt;<br>
+int main()<br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;static char *s[] ={<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"MalayalaM",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"to really mess things up...",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"one needs to know C",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"able was I ere I saw elba"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;};<br>
+&nbsp;&nbsp;&nbsp;&nbsp;char rev[30];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int i, a ;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;for(i = 0; i &lt;= 3; i++)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;strcpy(rev, s[i]);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;strrev(rev);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;a = strcmp(s[i], rev);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if( a == 0 )<br>
+&nbsp;&nbsp;&nbsp;&nbsp;printf("%s\n",s[i]);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+			</p>
+		</div>
+	</body>
+</html>
