@@ -8,7 +8,7 @@
 	<body>
 		<div>
 			<a href = "../html/theory.html"><img id = "btnM" src = "../images/btnT.png" /></a>
-			<a href = "../html/theory.html"><img id = "btnM" src = "../images/btnL.png" /></a>
+			<a href = "../html/lab.html"><img id = "btnM" src = "../images/btnL.png" /></a>
 			<a href = "../html/trk.html"><img id = "btnM" src = "../images/btnTk.png" /></a>
 			<a href = "../html/pat.html"><img id = "btnM" src = "../images/btnP.png" /></a>
 			<a href = "../html/mis.html"><img id = "btnM" src = "../images/btnM.png" /></a>
