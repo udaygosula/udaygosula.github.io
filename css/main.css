@@ -31,7 +31,7 @@
 		padding-top : 2%;
 	}
 	#list{
-		font-family : Comic Sans MS;
+		font-family : Maiandra GD;
 		color : rgb(26,82,118); 
 		font-size : 20px; 
 		text-align : center;
@@ -77,14 +77,47 @@
 		border-color : green;
 	}
 	#info{
-		position : absolute;
+		position : relative;
 		top : 20%;
 		text-align : center;
 		font-family : Cambria Math;
 		font-size : 150%;
 	}
+	fieldset{
+		position : relative;
+		width : 90%;
+	}
+	legend{
+		color : red;
+	}
+	#log{
+		position : absolute;
+		top : 20%;
+		left : 2%;
+		width : 96%;
+		height : 60%;
+		text-align : center;
+		background-color : black;
+		border-radius : 5%;
+		font-family : Lucida Sans Unicode;
+		font-weight : bold;
+		color : white;
+	}
+	#logform{
+		position : absolute;
+		top : 10%;
+		left : 2%;
+		width : 96%;
+		height : 80%;
+		text-align : center;
+		background-color : black;
+		border-radius : 5%;
+		font-family : Lucida Sans Unicode;
+		font-weight : bold;
+		color : white;
+	}
 }
-@media only screen and (max-width : 990px ){
+@media only screen and (min-width : 460px) and (max-width : 990px ){
 	body{	
 	}
 	#start{
@@ -122,9 +155,10 @@
 		padding-top : 2%;
 	}
 	#list{
-		font-family : Comic Sans MS;
+		font-family : Maiandra GD;
 		color : rgb(26,82,118); 
 		font-size : 20px;
+		text-align : center;
 	}
 	#txt{
 		display : block;
@@ -172,6 +206,37 @@
 		font-family : Cambria Math;
 		font-size : 150%;
 	}
+	fieldset{
+		position : relative;
+		left : 10%;
+		width : 80%;
+	}
+	legend{
+		color : red;
+	}
+	#log{
+		position : absolute;
+		top : 30%;
+		left : 10%;
+		width : 80%;
+		height : 40%;
+		text-align : center;
+		background-color : black;
+		color : white;
+		border-radius : 4%;
+	}
+	#logform{
+		position : absolute;
+		top : 5%;
+		left : 15%;
+		width : 70%;
+		height : 90%;
+		text-align : center;
+		background-color : black;
+		font-family : Lucida Sans Unicode;
+		font-weight : bold;
+		color : white;
+	}
 }
 @media only screen and (min-width : 990px){
 	body{
@@ -213,7 +278,7 @@
 		width : 80%;
 	}
 	#list{
-		font-family : Comic Sans MS;
+		font-family : Maiandra GD;
 		color : rgb(26,82,118); 
 		font-size : 20px; 
 		text-align : center;
@@ -254,11 +319,33 @@
 		width: 60%;
 	}
 	#info{
-		position : absolute;
+		position : relative;
 		top : 15%;
 		text-align : center;
 		font-family : Cambria Math;
 		font-size : 150%;
+	}
+	fieldset{
+		position : relative;
+		text-align : center;
+		left : 25%;
+		width : 50%;
+	}
+	legend{
+		color : red;
+	}
+	#log, #logform{
+		position : absolute;
+		top : 30%;
+		left : 10%;
+		width : 80%;
+		height : 40%;
+		text-align : center;
+		background-color : black;
+		border-radius : 4%;
+		font-family : Lucida Sans Unicode;
+		font-weight : bold;
+		color : white;
 	}
 }
 @media only screen and (min-width: 1200px) {
@@ -301,7 +388,7 @@
 		width : 80%;
 	}
 	#list{
-		font-family : Comic Sans MS;
+		font-family : Maiandra GD;
 		color : rgb(26,82,118); 
 		font-size : 20px; 
 		text-align : center;
@@ -343,9 +430,51 @@
 	}
 	#info{
 		position : relative;
-		top : 5%;
+		top : 20%;
 		text-align : center;
 		font-family : Cambria Math;
 		font-size : 150%;
+	}
+	fieldset{
+		position : relative;
+		left : 30%;
+		width : 40%;
+	}
+	legend{
+		color : red;
+	}
+	#log{
+		position : absolute;
+		top : 30%;
+		left : 30%;
+		width : 40%;
+		height : 40%;
+		text-align : center;
+		background-color : black;
+		color : white;
+		border-radius : 4%;
+	}
+	#logform{
+		position : absolute;
+		top : 30%;
+		left : 10%;
+		width : 80%;
+		height : 40%;
+		text-align : center;
+		background-color : black;
+		font-family : Lucida Sans Unicode;
+		font-weight : bold;
+		color : white;
+	}
+	#views{
+		border-collapse : collapse;
+		position : absolute;
+		left : 1%;
+		width : 98%;
+		
+	}
+	th, td {
+		border-style : solid;
+		border-color : green;
 	}
 }

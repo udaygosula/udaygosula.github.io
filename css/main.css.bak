@@ -332,6 +332,8 @@
 		color : orange;
 	}
 	table{
+		position : relative;
+		left : 10%;
 		border-collapse : collapse;
 		width : 60%;
 	}
