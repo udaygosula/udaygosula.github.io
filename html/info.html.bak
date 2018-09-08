@@ -66,12 +66,13 @@
 			<form  method = "POST" action = "../php/feed.php">
 			  <fieldset><legend>Send US : </legend>
 				Name <br> <input type = "text" name = "cname" placeholder = "Your Name" required pattern="^[A-Za-z ]+$" maxlength = "50"/><br><br>
-				Email <br> <input id="in" type="text" name="mail1" placeholder="Your Mail Id" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" maxlength= "100" /><br><br>
+				Email <br> <input id="in" type="text" name="mail" placeholder="Your Mail Id" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" maxlength= "100" /><br><br>
 				Feedback <br><textarea name = "feed" rows = "5" cols = "30" placeholder = "Your Feedback" required ></textarea><br><br>
 				<input type = "submit" value = "Send" />
 				<input type = "reset" value = "clear" /><br>
 				</fieldset>
 			</form><br>
+				mail us : <a href="mailto: gprec.Cedu@gmail.com" style = "text-decoration : none;">gprec.capp2018@gmail.com</a><br><br>
 		</div>
 		</div>
 	</body>
